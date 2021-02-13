@@ -8,6 +8,7 @@ print("HELLO")
 
 
 df_auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv')
-print(df_auto)
+# print the first 5 rows of the file
+print(df_auto.head())
 print()
 print()
