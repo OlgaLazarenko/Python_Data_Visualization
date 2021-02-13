@@ -3,9 +3,11 @@
 
 # work with the data file 'Auto_Import_1985.csv'
 # read the file into the data frame 'df_auto'
-import pandas as pandas
+import pandas as pd
+print("HELLO")
 
-df_auto = pd.read_csv(r'E:\_Python_Projects_Data\Data_Visualization\Auto_Import_1985.csv')
-print(df_auto.head())
+
+df_auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv')
+print(df_auto)
 print()
 print()
