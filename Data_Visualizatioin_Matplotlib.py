@@ -15,7 +15,10 @@ df_auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Se
                                     'Body Style' , 
                                     'Drive Wheels' ,
                                     'Num of Cylinders' ,
-                                    'Horsepower']
+                                    'Horsepower' ,
+                                    'City mpg' ,
+                                    'Highway mpg' ,
+                                    'Price']
                         )
 # print the first 5 rows of the file
 print(df_auto.head())
