@@ -20,6 +20,7 @@ df_auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Se
                                     'City mpg' ,
                                     'Highway mpg' ,
                                     'Curb Weight',
+                                    'Engine Size' ,
                                     'Price']
                         )
 # print the first 5 rows of the file
@@ -51,11 +52,28 @@ plt.show()
 
 
 # 2) ----  Histograms  ----
-# plot the symboling column 
+# plot the symboling/risk factor column
 fig, ax = plt.subplots()
 ax.hist(df_auto['Symboling'] , color = 'brown')
 ax.set_title('Risk factor (-3 the most risky, 3 the safest)')
 ax.set_xlabel('Risk factor')
+ax.set_ylabel('Frequency')
+plt.show()
+
+# plot the frequency of the number of doors
+fig, ax = plt.subplots()
+ax.hist(df_auto['City mpg'] , color = 'grey')
+ax.set_title('Frequency of the mileage')
+ax.set_xlabel('City mileage, mpg')
+ax.set_ylabel('Frequency')
+plt.show()
+
+# plot the frequency of the engine size
+fig, ax = plt.subplots()
+
+ax.hist(df_auto['Engine Size'], color = 'orange')
+ax.set_title('Imported cars engine size')
+ax.set_xlabel('Engine size')
 ax.set_ylabel('Frequency')
 plt.show()
 
