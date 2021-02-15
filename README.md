@@ -12,14 +12,14 @@ and also here [1985 Auto Imports Database](https://archive.ics.uci.edu/ml/machin
 ### The purpose of the project:
 Read the file containing the data about auto imports, perform data cleansing and validation and create visualizations using the Python library Matplotlib
 #### Use Python pandas library:
-- [] Read the data from the csv file into a pandas DataFrame 
+- [x] Read the data from the csv file into a pandas DataFrame 
 - [] Inspect a technical summary of the DataFrame: the columns( the data types:), null values, missing values
 - [] Validate data, remove the rows with errors, the duplicate rows 
 - [] Transform the data if it is necessary 
 #### Use Matplotlib library to do the data visualizations:
-- [] Create scatter plots
+- [x] Create scatter plots
 - [] Create line plots
-- [] Create histograms
+- [x] Create histograms
 - [] Create bar charts
 #### Answer the following questions:
 - [] Top 3 most expensive car models
