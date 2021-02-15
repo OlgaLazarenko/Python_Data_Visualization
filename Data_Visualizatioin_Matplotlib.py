@@ -77,7 +77,18 @@ ax.set_xlabel('Engine size')
 ax.set_ylabel('Frequency')
 plt.show()
 
-# 3) ----  Line chart  ----
+
+
+# 3) ----  Bar chart   ----
+# show the number of imported cars by the car's body style
+df_auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 45)
+plt.title('Number of imported cars by the body style')
+plt.xlabel('Body style')
+plt.ylabel('Number of imported cars')
+plt.show()
+
+
+# ) ----  Line chart  ----
 # x-axis 'Price', y-axis 'City mpg'
 fig , ax = plt.subplots()
 # group by number of cylinders , average city speed 
