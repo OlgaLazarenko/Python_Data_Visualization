@@ -1,13 +1,13 @@
 # Data_Visualizatioin_Matplotlib
 #!/bin/python3
 
+# import Matplotlib library
+import matplotlib.pyplot as plt
+
 # work with the data file 'Auto_Import_1985.csv'
-# read the file into the data frame 'df_auto'
-import pandas as pd
-print("HELLO")
+# read the file
 
-
-df_auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' ,
+auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' ,
                         usecols = [ 'Symboling' ,
                                     'Make' ,
                                     'Fuel Type' ,
@@ -27,8 +27,7 @@ df_auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Se
 print(df_auto.head())
 print()
 print()
-# import Matplotlib library
-import matplotlib.pyplot as plt
+
 # 1) ----  Scatter Plot  ----
 fig, ax = plt.subplots()
 
