@@ -81,10 +81,25 @@ plt.show()
 
 # 3) ----  Bar chart   ----
 # show the number of imported cars by the car's body style
-df_auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 45)
+df_auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 30 , color = 'purple')
 plt.title('Number of imported cars by the body style')
 plt.xlabel('Body style')
 plt.ylabel('Number of imported cars')
+
+'''
+
+'''
+numbers = df_auto['Body Style'].value_counts()
+print(numbers)
+print("***")
+for num in numbers :
+    print(num)
+print()
+for i in numbers:
+    plt.text( x = i , y = data , s = f"{df_auto}")
+plt.tight_layout()
+
+
 plt.show()
 
 
@@ -95,6 +110,7 @@ fig , ax = plt.subplots()
 avg_city_mpg = df_auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 print(avg_city_mpg)
+
 
 
 
