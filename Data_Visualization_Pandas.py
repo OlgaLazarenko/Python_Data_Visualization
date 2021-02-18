@@ -10,3 +10,4 @@ import pandas as pd
 adults_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Adults_Data_Set\Adults.csv")
 print(adults_df)
 print()
+print(adults_df.head())
