@@ -37,8 +37,8 @@ print()
 income_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Company_Income\Chargeable_Income.csv" ,
                         usecols = ['year_of_assessment' ,
                                   'no_of_companies_assessed' ,
-                                  'total_income' ,
                                   'chargeable_income' ,
+                                  'total_income' ,
                                   'donations']
                         )
 # show the first 5 rows of the data frame
