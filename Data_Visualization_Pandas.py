@@ -58,6 +58,10 @@ plt.show()
 income_df.plot.line ( x = 'year_of_assessment' , y = 'chargeable_income' , title = 'Chargeable income')
 plt.show()
 
+# put multiple line charts at the same figure
+income_df.drop(['no_of_companies_assessed' ], axis = 1).plot.line(x = 'year_of_assessment', title = 'Total income, chargeable income and donations made by the companies')
+plt.show()
+
 # 3) ----  Histogram  ----
 # plot the occurences of the hours per week
 adults_df['Hours per Week'].plot.hist()
