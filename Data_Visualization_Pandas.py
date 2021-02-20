@@ -46,6 +46,8 @@ print('Chargeable Income data set')
 print(income_df.head())
 
 # create a line chart plot
+income_df.plot.line( x = 'year_of_assessment' , y = 'no_of_companies_assessed', title = 'Number of asssesed companies over years')
+plt.show()
 
 
 # 3) ----  Histogram  ----
