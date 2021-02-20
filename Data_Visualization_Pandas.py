@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 adults_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Adults_Data_Set\Adults.csv" ,
                         usecols  = ['Age' ,
-                                  'Work Class' ,
+                                  'Work Class' ,    
                                   'Education' , 
                                   'Marital Status' ,
                                   'Occupation' , 
@@ -30,13 +30,22 @@ print(adults_df.head())
 adults_df.plot.scatter( x = 'Age' , y = 'Hours per Week' , title = 'Work hours and age')
 # to see the plot, add the Matplot syntax to show the plot
 plt.show()
+print()
 
 # 2) ----  Line Chart  ----
 # read the file 'Chargeable Income.csv'
-income_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Company_Income\Chargeable_Income.csv")
+income_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Company_Income\Chargeable_Income.csv" ,
+                        usecols = ['year_of_assessment' ,
+                                  'no_of_companies_assessed' ,
+                                  'total_income' ,
+                                  'chargeable_income' ,
+                                  'donations']
+                        )
 # show the first 5 rows of the data frame
 print('Chargeable Income data set')
 print(income_df.head())
+
+# create a line chart plot
 
 
 # 3) ----  Histogram  ----
