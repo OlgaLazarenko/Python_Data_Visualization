@@ -46,3 +46,5 @@ The following data sets are used:
 - [x] Create line chart/s, single/multiple
 - [x] Create histogram/s
 ### 2.4) Answer the questions:
+
+
