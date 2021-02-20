@@ -31,6 +31,9 @@ adults_df.plot.scatter( x = 'Age' , y = 'Hours per Week' , title = 'Work hours a
 # to see the plot, add the Matplot syntax to show the plot
 plt.show()
 print()
+# _______________________________________________________________________________________________________________________________________________
+
+
 
 # 2) ----  Line Chart  ----
 # read the file 'Chargeable Income.csv'
@@ -59,8 +62,11 @@ income_df.plot.line ( x = 'year_of_assessment' , y = 'chargeable_income' , title
 plt.show()
 
 # put multiple line charts at the same figure
-income_df.drop(['no_of_companies_assessed' ], axis = 1).plot.line(x = 'year_of_assessment', title = 'Total income, chargeable income and donations made by the companies')
+income_df.drop(['no_of_companies_assessed' ], axis = 1).plot.line(x = 'year_of_assessment', 
+                title = 'Total income, chargeable income and donations made by the companies')
 plt.show()
+print()
+# ___________________________________________________________________________________________________________________________________________________________
 
 # 3) ----  Histogram  ----
 # plot the occurences of the hours per week
