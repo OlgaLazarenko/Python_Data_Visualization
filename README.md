@@ -33,7 +33,8 @@ The dataset consists of the files:
 ## 2) Pandas library:
 ### 2.1) Data sources:
 The following data sets are used:
-[Adult Data Set](https://archive.ics.uci.edu/ml/datasets/Adult)
+[Adult Data Set](https://archive.ics.uci.edu/ml/datasets/Adult) 
+and
 [Income of Companies by Income Type, Annual](https://data.gov.sg/dataset/income-of-companies-by-income-type-annual?resource_id=3b64eaf4-78d7-4312-8167-1a423b83d0db)
 
 ### 2.2) The goals to be reached:
