@@ -21,7 +21,7 @@ The dataset consists of the files:
 - [] Create line plots
 - [x] Create histograms
 - [] Create bar charts
-#### 1.4) Answer the following questions:
+### 1.4) Answer the following questions:
 - [] Top 3 most expensive car models
 - [] Top 3 car models with highest mileage (city, highway)
 - [] Find out that was the most popular body style of the imported cars (sedan,wagon, etc)
@@ -31,10 +31,17 @@ The dataset consists of the files:
 
 ## 2) Pandas library:
 ### 2.1) Data sources:
+The following data sets are used:
+[Adult Data Set](https://archive.ics.uci.edu/ml/datasets/Adult)
+[Income of Companies by Income Type, Annual](https://data.gov.sg/dataset/income-of-companies-by-income-type-annual?resource_id=3b64eaf4-78d7-4312-8167-1a423b83d0db)
+
 ### 2.2) The goals to be reached:
 - [x] Read the data from the csv file into a pandas DataFrame 
 - [] Inspect a technical summary of the DataFrame: the columns( the data types:), null values, missing values
 - [] Validate data, remove the rows with errors, the duplicate rows 
 - [] Transform the data if it is necessary 
 ### 2.3) Visualization:
+- [x] Create scatter plot/s
+- [x] Create line chart/s, single/multiple
+- [x] Create histogram/s
 ### 2.4) Answer the questions:
