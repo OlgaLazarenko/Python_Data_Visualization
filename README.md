@@ -21,6 +21,7 @@ The dataset consists of the files:
 - [] Create line plots
 - [x] Create histograms
 - [] Create bar charts
+
 ### 1.4) Answer the following questions:
 - [] Top 3 most expensive car models
 - [] Top 3 car models with highest mileage (city, highway)
