@@ -31,6 +31,11 @@ print()
 print('the last five rows')
 print(adults_df.tail())
 print()
+
+# check the data type of the columns at the dataframe 'adults_df' and if there are null values
+print('check the data types of the columns at the dataframe "adults_df"')
+adults_df.info()
+print()
 # 1) ----  Scatter Plot  ----
 
 # scatter plot: 'Age' vs 'Hours per Week'
