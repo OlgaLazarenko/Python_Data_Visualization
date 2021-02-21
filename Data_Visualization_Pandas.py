@@ -22,8 +22,15 @@ adults_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Adults_Data
                         )
 print(adults_df)
 print()
+# display the first 5 rows of the data
+print('the first five rows')
 print(adults_df.head())
+print()
 
+# display the last 5 elements of the data
+print('the last five rows')
+print(adults_df.tail())
+print()
 # 1) ----  Scatter Plot  ----
 
 # scatter plot: 'Age' vs 'Hours per Week'
