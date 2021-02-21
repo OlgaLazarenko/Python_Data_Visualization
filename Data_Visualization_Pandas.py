@@ -57,8 +57,14 @@ income_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Company_Inc
                                   'donations']
                         )
 # show the first 5 rows of the data frame
-print('Chargeable Income data set')
+print('Chargeable Income data set; first 5 rows')
 print(income_df.head())
+print()
+print('Chargeable Income data set; last 5 rows')
+print(income_df.tail())
+print()
+# display the last 5 rows of the dataframe 'income_df'
+
 
 # create a line chart plot
 income_df.plot.line( x = 'year_of_assessment' , y = 'no_of_companies_assessed', title = 'Number of asssesed companies')
