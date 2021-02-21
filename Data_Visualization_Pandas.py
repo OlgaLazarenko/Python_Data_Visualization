@@ -60,10 +60,15 @@ income_df = pd.read_csv("E:\_Python_Projects_Data\Data_Visualization\Company_Inc
 print('Chargeable Income data set; first 5 rows')
 print(income_df.head())
 print()
+# display the last 5 rows of the dataframe 'income_df'
 print('Chargeable Income data set; last 5 rows')
 print(income_df.tail())
 print()
-# display the last 5 rows of the dataframe 'income_df'
+
+# check the data types of the columns and the presence of null values
+print('dataframe "income_df" information:')
+income_df.info()
+
 
 
 # create a line chart plot
