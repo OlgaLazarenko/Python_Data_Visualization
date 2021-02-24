@@ -80,24 +80,24 @@ plt.show()
 
 income_df.plot.line( x = 'year_of_assessment' , y = 'donations' , title = 'Donations made by the companies')
 plt.xlabel('Year')
-plt.ylabel('Donations, $ thousand')
+plt.ylabel('Donations, $ thoudand * 10^6')
 plt.show()
 
 income_df.plot.line ( x = 'year_of_assessment' , y = 'total_income' , title = 'Total income of the companies')
 plt.xlabel('Year')
-plt.ylabel('Total income, $ thousand')
+plt.ylabel('Total income, $ thousand * 10^7')
 plt.show()
 
 income_df.plot.line ( x = 'year_of_assessment' , y = 'chargeable_income' , title = 'Chargeable income')
 plt.xlabel('Year')
-plt.ylabel('Chargeable income, $ thousand')
+plt.ylabel('Chargeable income, $ thousand * 10^8')
 plt.show()
 
 # put multiple line charts at the same figure
-income_df.drop(['no_of_companies_assessed' ], axis = 1).plot.line(x = 'year_of_assessment', 
+income_df.drop(['no_of_companies_assessed' ], axis = 1).plot.line(x = 'year_of_assessment' ,
                 title = 'Total income, chargeable income and donations made by the companies')
 plt.xlabel('Year')
-plt.ylabel('Amount, $ thousand')
+plt.ylabel('Amount, $ thousand * 10^8')
 plt.show()
 print()
 # ___________________________________________________________________________________________________________________________________________________________
