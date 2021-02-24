@@ -72,21 +72,32 @@ income_df.info()
 
 
 # create a line chart plot
-income_df.plot.line( x = 'year_of_assessment' , y = 'no_of_companies_assessed', title = 'Number of asssesed companies')
+income_df.plot.line( x = 'year_of_assessment' , y = 'no_of_companies_assessed',
+                    title = 'Number of asssesed companies')
+plt.xlabel('Year')
+plt.ylabel('Number of companies assessed')
 plt.show()
 
 income_df.plot.line( x = 'year_of_assessment' , y = 'donations' , title = 'Donations made by the companies')
+plt.xlabel('Year')
+plt.ylabel('Donations, $ thousand')
 plt.show()
 
 income_df.plot.line ( x = 'year_of_assessment' , y = 'total_income' , title = 'Total income of the companies')
+plt.xlabel('Year')
+plt.ylabel('Total income, $ thousand')
 plt.show()
 
 income_df.plot.line ( x = 'year_of_assessment' , y = 'chargeable_income' , title = 'Chargeable income')
+plt.xlabel('Year')
+plt.ylabel('Chargeable income, $ thousand')
 plt.show()
 
 # put multiple line charts at the same figure
 income_df.drop(['no_of_companies_assessed' ], axis = 1).plot.line(x = 'year_of_assessment', 
                 title = 'Total income, chargeable income and donations made by the companies')
+plt.xlabel('Year')
+plt.ylabel('Amount, $ thousand')
 plt.show()
 print()
 # ___________________________________________________________________________________________________________________________________________________________
