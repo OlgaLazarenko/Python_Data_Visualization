@@ -103,12 +103,16 @@ print()
 # ___________________________________________________________________________________________________________________________________________________________
 
 # 3) ----  Histogram  ----
-# plot the occurences of the hours per week
+# plot the occurences of the work hours per week
 adults_df['Hours per Week'].plot.hist()
+plt.xlabel('Age, years')
+plt.ylabel('Hours/week')
 plt.show()
 
 # plot the frequencies of the age
 adults_df['Age'].plot.hist()
+plt.xlabel('Age, years')
+plt.ylable('Frequency')
 plt.show()
 
 # multiple histograms
