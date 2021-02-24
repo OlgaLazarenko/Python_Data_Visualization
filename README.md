@@ -39,7 +39,7 @@ and
 
 ### 2.2) The goals to be reached:
 - [x] Read the data from the csv file into a pandas DataFrame 
-- [] Inspect a technical summary of the DataFrame: the columns( the data types:), null values, missing values
+- [x] Inspect a technical summary of the DataFrame: the columns( the data types:), null values, missing values
 - [] Validate data, remove the rows with errors, the duplicate rows 
 - [] Transform the data if it is necessary 
 ### 2.3) Visualization:
