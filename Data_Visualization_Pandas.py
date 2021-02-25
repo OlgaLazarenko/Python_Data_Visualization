@@ -36,6 +36,9 @@ print()
 print('check the data types of the columns at the dataframe "adults_df"')
 adults_df.info()
 print()
+
+# ___________________________________________________________________________________________________________________________________________
+
 # 1) ----  Scatter Plot  ----
 
 # scatter plot: 'Age' vs 'Hours per Week'
@@ -100,6 +103,19 @@ plt.xlabel('Year')
 plt.ylabel('Amount, $ thousand * 10^8')
 plt.show()
 print()
+
+# multiple subplots line charts
+fig , ax = plt.subplots(2, figsize = (7,12))
+income_df.plot.line( x = 'year_of_assessment' , y = 'total_income' , ax = ax[0])
+ax[0].set_xlabel('Year')
+ax[0].set_ylabel('Total Income')
+
+
+income_df.plot.line( x = 'year_of_assessment' , y = 'chargeable_income' , ax = ax[1])
+ax[1].set_xlabel('Year')
+ax[1].set_ylabel('Chargeable Income')
+
+plt.show()
 # ___________________________________________________________________________________________________________________________________________________________
 
 # 3) ----  Histogram  ----
@@ -118,6 +134,8 @@ plt.title('Age distribution')
 plt.show()
 
 # multiple histograms
+adults_df(['Hours per Week'],['Age']).plot.hist( subplots = True , layout = (2,1), figsize = (20,10))
+plot.show()
 
 
 
