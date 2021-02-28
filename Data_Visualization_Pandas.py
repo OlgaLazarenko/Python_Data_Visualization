@@ -125,7 +125,7 @@ plt.show()
 
 
 # 3) ----  Histogram  ----
-# plot the occurences of the work hours per week
+# 3.1) plot the occurences of the work hours per week
 adults_df['Hours per Week'].plot.hist(color = 'grey' )
 plt.xlabel('Age, years')
 plt.ylabel('Hours/week')
@@ -139,9 +139,9 @@ plt.ylabel('Frequency')
 plt.title('Age Distribution')
 plt.show()
 
-# multiple histograms
+# 3.2) multiple histograms
 
-# horizontal order of the subplots
+#   --- horizontal order of the subplots
 
 plt.figure(figsize = (10,5))
 
@@ -160,6 +160,22 @@ plt.title('Age Distribution')
 plt.show()
 
 
+#    --- vertical order of the subplots
 
+plt.figure(figsize = (5,15))
+
+plt.subplot(211)
+adults_df['Hours per Week'].plot.hist(color = 'grey' )
+plt.xlabel('Age, years')
+plt.ylabel('Hours/week')
+plt.title('Work Hours by Age')
+
+plt.subplot(212)
+adults_df['Age'].plot.hist( color = 'green')
+plt.xlabel('Age, years')
+plt.ylabel('Frequency')
+plt.title('Age Distribution')
+
+plt.show()
 
 
