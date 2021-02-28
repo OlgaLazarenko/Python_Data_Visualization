@@ -37,6 +37,9 @@ print('check the data types of the columns at the dataframe "adults_df"')
 adults_df.info()
 print()
 
+
+
+'''
 # ___________________________________________________________________________________________________________________________________________
 
 # 1) ----  Scatter Plot  ----
@@ -117,25 +120,46 @@ ax[1].set_ylabel('Chargeable Income')
 
 plt.show()
 # ___________________________________________________________________________________________________________________________________________________________
+'''
+
+
 
 # 3) ----  Histogram  ----
 # plot the occurences of the work hours per week
 adults_df['Hours per Week'].plot.hist(color = 'grey' )
 plt.xlabel('Age, years')
 plt.ylabel('Hours/week')
-plt.title('Work hours by age')
+plt.title('Work Hours by Age')
 plt.show()
 
 # plot the frequencies of the age
 adults_df['Age'].plot.hist( color = 'green')
 plt.xlabel('Age, years')
 plt.ylabel('Frequency')
-plt.title('Age distribution')
+plt.title('Age Distribution')
 plt.show()
 
 # multiple histograms
-adults_df(['Hours per Week'],['Age']).plot.hist( subplots = True , layout = (2,1), figsize = (20,10))
-plot.show()
+
+# horizontal order of the subplots
+
+plt.figure(figsize = (10,5))
+
+plt.subplot(121)
+adults_df['Hours per Week'].plot.hist(color = 'grey' )
+plt.xlabel('Age, years')
+plt.ylabel('Hours/week')
+plt.title('Work Hours by Age')
+
+plt.subplot(122)
+adults_df['Age'].plot.hist( color = 'green')
+plt.xlabel('Age, years')
+plt.ylabel('Frequency')
+plt.title('Age Distribution')
+
+plt.show()
+
+
 
 
 
