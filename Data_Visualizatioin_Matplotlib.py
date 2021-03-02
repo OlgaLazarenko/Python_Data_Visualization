@@ -49,6 +49,7 @@ ax.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
 ax.set_title('Auto Weight and Speed')
 ax.set_xlabel('Curb Weight')
 ax.set_ylabel('City mpg')
+ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 
 
@@ -59,6 +60,7 @@ ax.hist(auto['Symboling'] , color = 'brown')
 ax.set_title('Risk factor (-3 the most risky, 3 the safest)')
 ax.set_xlabel('Risk factor')
 ax.set_ylabel('Frequency')
+ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 
 # plot the frequency of the number of doors
@@ -67,6 +69,7 @@ ax.hist(auto['City mpg'] , color = 'grey')
 ax.set_title('Frequency of the mileage')
 ax.set_xlabel('City mileage, mpg')
 ax.set_ylabel('Frequency')
+ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 
 # plot the frequency of the engine size
@@ -76,6 +79,7 @@ ax.hist(auto['Engine Size'], color = 'orange')
 ax.set_title('Imported cars engine size')
 ax.set_xlabel('Engine size')
 ax.set_ylabel('Frequency')
+ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 
 
@@ -86,6 +90,7 @@ auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 30
 plt.title('Number of imported cars by the body style')
 plt.xlabel('Body style')
 plt.ylabel('Number of imported cars')
+
 
 '''
 
