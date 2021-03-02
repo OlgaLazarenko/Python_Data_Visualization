@@ -29,10 +29,12 @@ print(auto.head())
 print()
 print()
 
+# _____________________________________________________________________________________
+
 # 1) ----  Scatter Plot  ----
 fig, ax = plt.subplots()
 
-# scatter plot: the city mpg against highway mpg
+# 1.1) scatter plot: the city mpg against highway mpg
 ax.scatter(auto['City mpg'] , auto['Highway mpg'])
 
 # set a title and labels
@@ -43,13 +45,29 @@ ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 print()
 
-# scatter plot:curb weight against city  miles per gallon
+# 1.2) scatter plot:curb weight against city  miles per gallon
 fig, ax = plt.subplots()
 ax.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
 ax.set_title('Auto Weight and Speed')
 ax.set_xlabel('Curb Weight')
 ax.set_ylabel('City mpg')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+plt.show()
+
+# 1.3) subplot of the scatter graphs, vertical order
+fig1, (ax1 , ax2 ) = plt.subplots(nrows = 2 , ncols = 1 , figsize = (5, 10))
+ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
+ax1.set_title('Auto Imports for 1985 year')
+ax1.set_xlabel('City miles per gallon')
+ax1.set_ylabel('Highway miles per gallon')
+ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+
+
+ax2.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
+ax2.set_title('Auto Weight and Speed')
+ax2.set_xlabel('Curb Weight')
+ax2.set_ylabel('City mpg')
+ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 
 
@@ -92,9 +110,7 @@ plt.xlabel('Body style')
 plt.ylabel('Number of imported cars')
 
 
-'''
 
-'''
 numbers = auto['Body Style'].value_counts()
 print(numbers)
 print("***")
