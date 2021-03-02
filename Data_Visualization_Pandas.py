@@ -127,7 +127,12 @@ plt.show()
 # 3) ----  Histogram  ----
 # 3.1) plot the occurences of the work hours per week
 adults_df['Hours per Week'].plot.hist(color = 'grey' )
+# do not allow the axis to be on top of the data
+plt.axisbelow(True)
+# customize the grid lines
+
 plt.grid()
+
 plt.xlabel('Age, years')
 plt.ylabel('Hours/week')
 plt.title('Work Hours by Age')
