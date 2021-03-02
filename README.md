@@ -11,10 +11,10 @@ The dataset consists of the files:
 - [imports-85.names](https://archive.ics.uci.edu/ml/machine-learning-databases/autos/), the description
 
 ### 1.2) The goals to be reached:
-- [] Read the file containing the data about auto imports
-- [] Inspect a technical summary of the DataFrame: the columns( the data types:), null values, missing values
+- [x] Read the file containing the data about auto imports
+- [x] Inspect a technical summary of the DataFrame: the columns( the data types:), null values, missing values
 - [] Perform the data cleansing and validation
-- [] Create visualizations using the Python library Matplotlib
+- [x] Create visualizations using the Python library Matplotlib
 
 ### 1.3) Visualization:
 - [x] Create scatter plots
