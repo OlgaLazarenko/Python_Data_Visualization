@@ -39,7 +39,7 @@ ax.scatter(auto['City mpg'] , auto['Highway mpg'])
 ax.set_title('Auto Imports for 1985 year')
 ax.set_xlabel('City miles per gallon')
 ax.set_ylabel('Highway miles per gallon')
-ax.grid(True)
+ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 plt.show()
 print()
 
