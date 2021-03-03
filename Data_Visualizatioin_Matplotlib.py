@@ -54,7 +54,6 @@ ax.set_xlabel('Curb Weight')
 ax.set_ylabel('City mpg')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
-
 plt.show()
 
 # 1.3) subplots of the scatter graphs, vertical order
@@ -84,18 +83,19 @@ ax1.set_title('Auto Imports, 1985 year')
 ax1.set_xlabel('City miles per gallon')
 ax1.set_ylabel('Highway miles per gallon')
 ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
-
+ax1.set_axisbelow(True)
 
 ax2.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
 ax2.set_title('Auto Weight and Speed')
 ax2.set_xlabel('Curb Weight')
 ax2.set_ylabel('City mpg')
 ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax2.set_axisbelow(True)
 
 plt.show()
 
+# _______________________________________________________________________________________________________
 
-'''
 # 2) ----  Histograms  ----
 # plot the symboling/risk factor column
 fig, ax = plt.subplots()
@@ -103,7 +103,8 @@ ax.hist(auto['Symboling'] , color = 'brown')
 ax.set_title('Risk factor (-3 the most risky, 3 the safest)')
 ax.set_xlabel('Risk factor')
 ax.set_ylabel('Frequency')
-ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax.set_axisbelow(True)
 plt.show()
 
 # plot the frequency of the number of doors
@@ -112,7 +113,8 @@ ax.hist(auto['City mpg'] , color = 'grey')
 ax.set_title('Frequency of the mileage')
 ax.set_xlabel('City mileage, mpg')
 ax.set_ylabel('Frequency')
-ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax.set_axisbelow(True)
 plt.show()
 
 # plot the frequency of the engine size
@@ -122,11 +124,12 @@ ax.hist(auto['Engine Size'], color = 'orange')
 ax.set_title('Imported cars engine size')
 ax.set_xlabel('Engine size')
 ax.set_ylabel('Frequency')
-ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax.set_axisbelow(True)
 plt.show()
 
 
-
+'''
 # 3) ----  Bar chart   ----
 # show the number of imported cars by the car's body style
 auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 30 , color = 'purple')
@@ -157,8 +160,9 @@ fig , ax = plt.subplots()
 avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 print(avg_city_mpg)
+'''
 
-''' 
+
 
 
 
