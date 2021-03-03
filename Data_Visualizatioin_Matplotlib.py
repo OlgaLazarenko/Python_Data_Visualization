@@ -38,10 +38,11 @@ fig, ax = plt.subplots()
 ax.scatter(auto['City mpg'] , auto['Highway mpg'])
 
 # set a title and labels
-ax.set_title('Auto Imports for 1985 year')
+ax.set_title('Auto Imports, 1985 year')
 ax.set_xlabel('City miles per gallon')
 ax.set_ylabel('Highway miles per gallon')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points 
 plt.show()
 print()
 
@@ -52,12 +53,34 @@ ax.set_title('Auto Weight and Speed')
 ax.set_xlabel('Curb Weight')
 ax.set_ylabel('City mpg')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax.set_axisbelow(True)
+
 plt.show()
 
-# 1.3) subplot of the scatter graphs, vertical order
+# 1.3) subplots of the scatter graphs, vertical order
 fig1, (ax1 , ax2 ) = plt.subplots(nrows = 2 , ncols = 1 , figsize = (5, 10))
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
-ax1.set_title('Auto Imports for 1985 year')
+ax1.set_title('Auto Imports, 1985 year')
+ax1.set_xlabel('City miles per gallon')
+ax1.set_ylabel('Highway miles per gallon')
+ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax1.set_axisbelow(True)
+
+
+ax2.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
+ax2.set_title('Auto Weight and Speed')
+ax2.set_xlabel('Curb Weight')
+ax2.set_ylabel('City mpg')
+ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax2.set_axisbelow(True)
+
+plt.show()
+
+
+# 1.4) subplots of the scatter graphs, horizontal order
+fig1, (ax1 , ax2 ) = plt.subplots(nrows = 1 , ncols = 2 , figsize = (10, 5))
+ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
+ax1.set_title('Auto Imports, 1985 year')
 ax1.set_xlabel('City miles per gallon')
 ax1.set_ylabel('Highway miles per gallon')
 ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
@@ -68,9 +91,11 @@ ax2.set_title('Auto Weight and Speed')
 ax2.set_xlabel('Curb Weight')
 ax2.set_ylabel('City mpg')
 ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+
 plt.show()
 
 
+'''
 # 2) ----  Histograms  ----
 # plot the symboling/risk factor column
 fig, ax = plt.subplots()
@@ -133,7 +158,7 @@ avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 print(avg_city_mpg)
 
-
+''' 
 
 
 
