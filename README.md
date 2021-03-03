@@ -17,9 +17,9 @@ The dataset consists of the files:
 - [x] Create visualizations using the Python library Matplotlib
 
 ### 1.3) Visualization:
-- [x] Create scatter plots
+- [x] Create scatter plots: single and subplots
 - [] Create line plots
-- [x] Create histograms
+- [x] Create histograms: single and subplots
 - [] Create bar charts
 
 ### 1.4) Answer the following questions:
@@ -43,7 +43,7 @@ and
 - [] Validate data, remove the rows with errors, the duplicate rows 
 - [] Transform the data if it is necessary 
 ### 2.3) Visualization:
-- [x] Create scatter plot/s
+- [x] Create scatter plot/s: single and subplots
 - [x] Create line chart/s, single/multiple
 - [x] Create histogram/s
 ### 2.4) Answer the questions:
