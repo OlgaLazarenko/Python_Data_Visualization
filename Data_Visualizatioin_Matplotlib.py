@@ -58,6 +58,7 @@ plt.show()
 
 # 1.3) subplots of the scatter graphs, vertical order
 fig1, (ax1 , ax2 ) = plt.subplots(nrows = 2 , ncols = 1 , figsize = (5, 10))
+
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
 ax1.set_title('Auto Imports, 1985 year')
 ax1.set_xlabel('City miles per gallon')
@@ -78,6 +79,7 @@ plt.show()
 
 # 1.4) subplots of the scatter graphs, horizontal order
 fig1, (ax1 , ax2 ) = plt.subplots(nrows = 1 , ncols = 2 , figsize = (10, 5))
+
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
 ax1.set_title('Auto Imports, 1985 year')
 ax1.set_xlabel('City miles per gallon')
@@ -97,7 +99,7 @@ plt.show()
 # _______________________________________________________________________________________________________
 
 # 2) ----  Histograms  ----
-# plot the symboling/risk factor column
+# 2.1) plot the symboling/risk factor column
 fig, ax = plt.subplots()
 ax.hist(auto['Symboling'] , color = 'brown')
 ax.set_title('Risk factor (-3 the most risky, 3 the safest)')
@@ -107,7 +109,7 @@ ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
 plt.show()
 
-# plot the frequency of the number of doors
+# 2.2) plot the frequency of the mileage
 fig, ax = plt.subplots()
 ax.hist(auto['City mpg'] , color = 'grey')
 ax.set_title('Frequency of the mileage')
@@ -117,9 +119,8 @@ ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
 plt.show()
 
-# plot the frequency of the engine size
+# 2.3) plot the frequency of the engine size
 fig, ax = plt.subplots()
-
 ax.hist(auto['Engine Size'], color = 'orange')
 ax.set_title('Imported cars engine size')
 ax.set_xlabel('Engine size')
@@ -127,6 +128,37 @@ ax.set_ylabel('Frequency')
 ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
 plt.show()
+
+# 2.3) subplot the historams at the vertical orders
+fig , (ax1,ax2,ax3) = plt.subplots(nrows = 3 , ncols = 1, figsize = (7, 16))
+
+ax1.hist(auto['Symboling'] , color = 'brown')
+ax1.set_title('Risk factor (-3 is the most risky, 3 is the safest)')
+ax1.set_xlabel('Risk factor')
+ax1.set_ylabel('Frequency')
+ax1.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax1.set_axisbelow(True)
+
+
+ax2.hist(auto['City mpg'] , color = 'grey')
+ax2.set_title('Frequency of the mileage')
+ax2.set_xlabel('City mileage, mpg')
+ax2.set_ylabel('Frequency')
+ax2.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax2.set_axisbelow(True)
+
+
+ax3.hist(auto['Num of Doors'], color = 'green')
+ax3.set_title('')
+ax3.set_xlabel('Num of Doors')
+ax3.set_ylabel('Frequency')
+ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+
+ax3.set_axisbelow(True)
+
+plt.show()
+
+
 
 
 '''
