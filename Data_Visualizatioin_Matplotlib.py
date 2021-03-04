@@ -132,7 +132,7 @@ plt.show()
 # 2.3) subplot the historams at the vertical orders
 fig , (ax1,ax2,ax3) = plt.subplots(nrows = 3 , ncols = 1, figsize = (7, 16))
 
-ax1.hist(auto['Symboling'] , color = 'brown')
+ax1.hist(auto['Num of Doors'] , color = 'brown')
 ax1.set_title('Risk factor (-3 is the most risky, 3 is the safest)')
 ax1.set_xlabel('Risk factor')
 ax1.set_ylabel('Frequency')
@@ -153,7 +153,31 @@ ax3.set_title('')
 ax3.set_xlabel('Num of Doors')
 ax3.set_ylabel('Frequency')
 ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax3.set_axisbelow(True)
 
+plt.show()
+
+# 2.4) subplot the histograms at the horizontal order 
+fig, (ax1, ax2, ax3) = plt.subplots(nrows = 1, ncols = 3, figsize = (15,5))
+ax1.hist(auto['Fuel Type'] , color = 'blue')
+ax1.set_title('Fuel type of the imported cars')
+ax1.set_xlabel('Fuel Type')
+ax1.set_ylabel('Frequency')
+ax1.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax1.set_axisbelow(True)
+
+ax2.hist(auto['Num of Doors'] , color = 'brown')
+ax2.set_title('Autos Number of Doors')
+ax2.set_xlabel('Number of Doors')
+ax2.set_ylabel('Frequency')
+ax2.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax2.set_axisbelow(True)
+
+ax3.hist(auto['Body Style'] , color = 'green')
+ax3.set_title('Imported Autos Body Style')
+ax3.set_xlabel('Body Style')
+ax3.set_ylabel('Frequency')
+ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
 
 plt.show()
