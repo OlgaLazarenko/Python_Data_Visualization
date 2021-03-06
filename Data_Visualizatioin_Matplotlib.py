@@ -22,6 +22,7 @@ auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\A
                                     'Highway mpg' ,
                                     'Curb Weight',
                                     'Engine Size' ,
+                                    'Engine Type' ,
                                     'Price']
                         )
 # print the first 5 rows of the file
@@ -130,7 +131,7 @@ ax.set_axisbelow(True)
 plt.show()
 
 # 2.3) subplot the historams at the vertical orders
-fig , (ax1,ax2,ax3) = plt.subplots(nrows = 3 , ncols = 1, figsize = (7, 16))
+fig , (ax1,ax2,ax3,ax4) = plt.subplots(nrows = 4 , ncols = 1, figsize = (4, 17))
 
 ax1.hist(auto['Num of Doors'] , color = 'brown')
 ax1.set_title('Risk factor (-3 is the most risky, 3 is the safest)')
@@ -148,13 +149,22 @@ ax2.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
 
 
-ax3.hist(auto['Num of Doors'], color = 'green')
+ax3.hist(auto['Engine Type'], color = 'green')
 ax3.set_title('')
-ax3.set_xlabel('Num of Doors')
+ax3.set_xlabel('Engine Type')
 ax3.set_ylabel('Frequency')
 ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
 
+ax4.hist(auto['Num of Cylinders'], color = 'purple')
+ax4.set_title('')
+ax4.set_xlabel('Num of Cylinders')
+ax4.set_ylabel('Frequency')
+ax4.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
+ax4.set_axisbelow(True)
+
+
+fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_RiskFactor_Mileage_EngineType_NumCylinders.png')
 plt.show()
 
 # 2.4) subplot the histograms at the horizontal order 
