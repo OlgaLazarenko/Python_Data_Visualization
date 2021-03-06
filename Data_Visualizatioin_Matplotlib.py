@@ -180,7 +180,12 @@ ax3.set_ylabel('Frequency')
 ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
 
+# save the figure to the image file
+fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_FuelType_NumDoors_BodyStyle.png')
 plt.show()
+
+
+
 
 
 
