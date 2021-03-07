@@ -34,7 +34,7 @@ print()
 
 # 1) ----  Scatter Plot  ----
 
-'''
+
 # 1.1) scatter plot: the city mpg against highway mpg
 fig, ax = plt.subplots()
 fig.set_facecolor('gainsboro')
@@ -108,7 +108,7 @@ ax2.set_axisbelow(True)
 ax2.set_facecolor('beige')
 
 plt.show()
-'''
+
 # _______________________________________________________________________________________________________
 
 # 2) ----  Histograms  ----
@@ -124,12 +124,12 @@ ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
 ax.set_facecolor('beige')
 plt.show()
-'''
+
 # 2.2) plot the frequency of the mileage
 fig, ax = plt.subplots()
 fig.set_facecolor('gainsboro')
 
-ax.hist(auto['City mpg'] , color = 'grey')
+ax.hist(auto['City mpg'] , color = 'grey', edgecolor = 'red' , linewidth = 2)
 ax.set_title('Frequency of the mileage')
 ax.set_xlabel('City mileage, mpg')
 ax.set_ylabel('Frequency')
@@ -137,12 +137,11 @@ ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
 ax.set_facecolor('lightcyan')
 plt.show()
-
 # 2.3) plot the frequency of the engine size
 fig, ax = plt.subplots()
 fig.set_facecolor('gainsboro')
 
-ax.hist(auto['Engine Size'], color = 'orange')
+ax.hist(auto['Engine Size'], color = 'orange' , edgecolor = 'black' , linewidth = 1.5)
 ax.set_title('Imported cars engine size')
 ax.set_xlabel('Engine size')
 ax.set_ylabel('Frequency')
@@ -155,39 +154,39 @@ plt.show()
 fig , (ax1,ax2,ax3,ax4) = plt.subplots(nrows = 4 , ncols = 1, figsize = (5,17))
 fig.set_facecolor('gainsboro')
 
-ax1.hist(auto['Num of Doors'] , color = 'brown')
+ax1.hist(auto['Num of Doors'] , color = 'brown', edgecolor = 'orange' , linewidth = 1.5)
 ax1.set_title('Risk factor (-3 is the most risky, 3 is the safest)')
 ax1.set_xlabel('Risk factor')
 ax1.set_ylabel('Frequency')
 ax1.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax1.set_axisbelow(True)
-ax1.set_facecolor('seashell')
+ax1.set_facecolor('beige')
 
 
-ax2.hist(auto['City mpg'] , color = 'indigo')
+ax2.hist(auto['City mpg'] , color = 'indigo', edgecolor = 'orange' , linewidth = 1.5 )
 ax2.set_title('Frequency of the mileage')
 ax2.set_xlabel('City mileage, mpg')
 ax2.set_ylabel('Frequency')
 ax2.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
-ax2.set_facecolor('seashell')
+ax2.set_facecolor('beige')
 
 
-ax3.hist(auto['Engine Type'], color = 'green')
+ax3.hist(auto['Engine Type'], color = 'green', edgecolor = 'orange' , linewidth = 1.5)
 ax3.set_title('')
 ax3.set_xlabel('Engine Type')
 ax3.set_ylabel('Frequency')
 ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
-ax3.set_facecolor('seashell')
+ax3.set_facecolor('beige')
 
-ax4.hist(auto['Num of Cylinders'], color = 'purple')
+ax4.hist(auto['Num of Cylinders'], color = 'purple', edgecolor = 'orange' , linewidth = 1.5)
 ax4.set_title('')
 ax4.set_xlabel('Num of Cylinders')
 ax4.set_ylabel('Frequency')
 ax4.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax4.set_axisbelow(True)
-ax4.set_facecolor('seashell')
+ax4.set_facecolor('beige')
 
 
 fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_RiskFactor_Mileage_EngineType_NumCylinders.png')
@@ -225,11 +224,7 @@ ax3.set_facecolor('linen')
 fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_FuelType_NumDoors_BodyStyle.png')
 plt.show()
 
-
-
-
-
-
+# _________________________________________________________________________________________________________________
 
 
 # 3) ----  Bar chart   ----
@@ -262,9 +257,5 @@ fig , ax = plt.subplots()
 avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 print(avg_city_mpg)
-'''
-
-
-
 
 
