@@ -43,7 +43,8 @@ ax.set_title('Auto Imports, 1985 year')
 ax.set_xlabel('City miles per gallon')
 ax.set_ylabel('Highway miles per gallon')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
-ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points 
+ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points
+ax.set_facecolor('aliceblue')
 plt.show()
 print()
 
@@ -55,6 +56,7 @@ ax.set_xlabel('Curb Weight')
 ax.set_ylabel('City mpg')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
+ax.set_facecolor('lavender')
 plt.show()
 
 # 1.3) subplots of the scatter graphs, vertical order
@@ -66,6 +68,7 @@ ax1.set_xlabel('City miles per gallon')
 ax1.set_ylabel('Highway miles per gallon')
 ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax1.set_axisbelow(True)
+ax1.set_facecolor('azure')
 
 
 ax2.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
@@ -74,6 +77,7 @@ ax2.set_xlabel('Curb Weight')
 ax2.set_ylabel('City mpg')
 ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
+ax2.set_facecolor('azure')
 
 plt.show()
 
@@ -87,6 +91,7 @@ ax1.set_xlabel('City miles per gallon')
 ax1.set_ylabel('Highway miles per gallon')
 ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax1.set_axisbelow(True)
+ax1.set_facecolor('beige')
 
 ax2.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
 ax2.set_title('Auto Weight and Speed')
@@ -94,6 +99,7 @@ ax2.set_xlabel('Curb Weight')
 ax2.set_ylabel('City mpg')
 ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
+ax2.set_facecolor('beige')
 
 plt.show()
 
@@ -118,6 +124,7 @@ ax.set_xlabel('City mileage, mpg')
 ax.set_ylabel('Frequency')
 ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
+ax.set_facecolor('lightcyan')
 plt.show()
 
 # 2.3) plot the frequency of the engine size
@@ -128,10 +135,11 @@ ax.set_xlabel('Engine size')
 ax.set_ylabel('Frequency')
 ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
+ax.set_facecolor('cornsilk')
 plt.show()
 
-# 2.3) subplot the historams at the vertical orders
-fig , (ax1,ax2,ax3,ax4) = plt.subplots(nrows = 4 , ncols = 1, figsize = (4, 17))
+# 2.3) subplot the historams at the vertical order
+fig , (ax1,ax2,ax3,ax4) = plt.subplots(nrows = 4 , ncols = 1, figsize = (5,17))
 
 ax1.hist(auto['Num of Doors'] , color = 'brown')
 ax1.set_title('Risk factor (-3 is the most risky, 3 is the safest)')
@@ -139,14 +147,16 @@ ax1.set_xlabel('Risk factor')
 ax1.set_ylabel('Frequency')
 ax1.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax1.set_axisbelow(True)
+ax1.set_facecolor('seashell')
 
 
-ax2.hist(auto['City mpg'] , color = 'grey')
+ax2.hist(auto['City mpg'] , color = 'indigo')
 ax2.set_title('Frequency of the mileage')
 ax2.set_xlabel('City mileage, mpg')
 ax2.set_ylabel('Frequency')
 ax2.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
+ax2.set_facecolor('seashell')
 
 
 ax3.hist(auto['Engine Type'], color = 'green')
@@ -155,6 +165,7 @@ ax3.set_xlabel('Engine Type')
 ax3.set_ylabel('Frequency')
 ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
+ax3.set_facecolor('seashell')
 
 ax4.hist(auto['Num of Cylinders'], color = 'purple')
 ax4.set_title('')
@@ -162,6 +173,7 @@ ax4.set_xlabel('Num of Cylinders')
 ax4.set_ylabel('Frequency')
 ax4.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax4.set_axisbelow(True)
+ax4.set_facecolor('seashell')
 
 
 fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_RiskFactor_Mileage_EngineType_NumCylinders.png')
@@ -175,6 +187,7 @@ ax1.set_xlabel('Fuel Type')
 ax1.set_ylabel('Frequency')
 ax1.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax1.set_axisbelow(True)
+ax1.set_facecolor('linen')
 
 ax2.hist(auto['Num of Doors'] , color = 'brown')
 ax2.set_title('Autos Number of Doors')
@@ -182,6 +195,7 @@ ax2.set_xlabel('Number of Doors')
 ax2.set_ylabel('Frequency')
 ax2.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
+ax2.set_facecolor('linen')
 
 ax3.hist(auto['Body Style'] , color = 'green')
 ax3.set_title('Imported Autos Body Style')
@@ -189,6 +203,7 @@ ax3.set_xlabel('Body Style')
 ax3.set_ylabel('Frequency')
 ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
+ax3.set_facecolor('linen')
 
 # save the figure to the image file
 fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_FuelType_NumDoors_BodyStyle.png')
