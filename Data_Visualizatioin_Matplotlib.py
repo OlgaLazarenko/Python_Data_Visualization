@@ -34,7 +34,7 @@ print()
 
 # 1) ----  Scatter Plot  ----
 
-
+'''
 # 1.1) scatter plot: the city mpg against highway mpg
 fig, ax = plt.subplots()
 fig.set_facecolor('gainsboro')
@@ -46,7 +46,7 @@ ax.set_xlabel('City miles per gallon')
 ax.set_ylabel('Highway miles per gallon')
 ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points
-ax.set_facecolor('aliceblue')
+ax.set_facecolor('beige')
 plt.show()
 print()
 
@@ -64,7 +64,7 @@ ax.set_facecolor('lavender')
 plt.show()
 
 # 1.3) subplots of the scatter graphs, vertical order
-fig1, (ax1 , ax2 ) = plt.subplots(nrows = 2 , ncols = 1 , figsize = (5, 10))
+fig, (ax1 , ax2 ) = plt.subplots(nrows = 2 , ncols = 1 , figsize = (5, 10))
 fig.set_facecolor('gainsboro')
 
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
@@ -73,7 +73,7 @@ ax1.set_xlabel('City miles per gallon')
 ax1.set_ylabel('Highway miles per gallon')
 ax1.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax1.set_axisbelow(True)
-ax1.set_facecolor('azure')
+ax1.set_facecolor('beige')
 
 
 ax2.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
@@ -82,13 +82,13 @@ ax2.set_xlabel('Curb Weight')
 ax2.set_ylabel('City mpg')
 ax2.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax2.set_axisbelow(True)
-ax2.set_facecolor('azure')
+ax2.set_facecolor('beige')
 
 plt.show()
 
 
 # 1.4) subplots of the scatter graphs, horizontal order
-fig1, (ax1 , ax2 ) = plt.subplots(nrows = 1 , ncols = 2 , figsize = (10, 5))
+fig, (ax1 , ax2 ) = plt.subplots(nrows = 1 , ncols = 2 , figsize = (10, 5))
 fig.set_facecolor('gainsboro')
 
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
@@ -108,23 +108,23 @@ ax2.set_axisbelow(True)
 ax2.set_facecolor('beige')
 
 plt.show()
-
+'''
 # _______________________________________________________________________________________________________
 
 # 2) ----  Histograms  ----
 # 2.1) plot the symboling/risk factor column
 fig, ax = plt.subplots()
-fig.set_facecolor('gainsboro')
+fig.set_facecolor('lightcyan')
 
-ax.hist(auto['Symboling'] , color = 'brown')
+ax.hist(auto['Symboling'] , color = 'salmon' , align = 'mid' , edgecolor = 'royalblue', linewidth = 3 )
 ax.set_title('Risk factor (-3 the most risky, 3 the safest)')
 ax.set_xlabel('Risk factor')
 ax.set_ylabel('Frequency')
 ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
-ax.set_facecolor('lightcyan')
+ax.set_facecolor('beige')
 plt.show()
-
+'''
 # 2.2) plot the frequency of the mileage
 fig, ax = plt.subplots()
 fig.set_facecolor('gainsboro')
@@ -231,7 +231,7 @@ plt.show()
 
 
 
-'''
+
 # 3) ----  Bar chart   ----
 # show the number of imported cars by the car's body style
 auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 30 , color = 'purple')
