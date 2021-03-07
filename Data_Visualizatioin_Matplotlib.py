@@ -33,11 +33,13 @@ print()
 # _____________________________________________________________________________________
 
 # 1) ----  Scatter Plot  ----
-fig, ax = plt.subplots()
+
 
 # 1.1) scatter plot: the city mpg against highway mpg
-ax.scatter(auto['City mpg'] , auto['Highway mpg'])
+fig, ax = plt.subplots()
+fig.set_facecolor('gainsboro')
 
+ax.scatter(auto['City mpg'] , auto['Highway mpg'])
 # set a title and labels
 ax.set_title('Auto Imports, 1985 year')
 ax.set_xlabel('City miles per gallon')
@@ -50,6 +52,8 @@ print()
 
 # 1.2) scatter plot:curb weight against city  miles per gallon
 fig, ax = plt.subplots()
+fig.set_facecolor('gainsboro')
+
 ax.scatter(auto['Curb Weight'] , auto['City mpg'] , color = 'green')
 ax.set_title('Auto Weight and Speed')
 ax.set_xlabel('Curb Weight')
@@ -61,6 +65,7 @@ plt.show()
 
 # 1.3) subplots of the scatter graphs, vertical order
 fig1, (ax1 , ax2 ) = plt.subplots(nrows = 2 , ncols = 1 , figsize = (5, 10))
+fig.set_facecolor('gainsboro')
 
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
 ax1.set_title('Auto Imports, 1985 year')
@@ -84,6 +89,7 @@ plt.show()
 
 # 1.4) subplots of the scatter graphs, horizontal order
 fig1, (ax1 , ax2 ) = plt.subplots(nrows = 1 , ncols = 2 , figsize = (10, 5))
+fig.set_facecolor('gainsboro')
 
 ax1.scatter(auto['City mpg'] , auto['Highway mpg'])
 ax1.set_title('Auto Imports, 1985 year')
@@ -108,16 +114,21 @@ plt.show()
 # 2) ----  Histograms  ----
 # 2.1) plot the symboling/risk factor column
 fig, ax = plt.subplots()
+fig.set_facecolor('gainsboro')
+
 ax.hist(auto['Symboling'] , color = 'brown')
 ax.set_title('Risk factor (-3 the most risky, 3 the safest)')
 ax.set_xlabel('Risk factor')
 ax.set_ylabel('Frequency')
 ax.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True)
+ax.set_facecolor('lightcyan')
 plt.show()
 
 # 2.2) plot the frequency of the mileage
 fig, ax = plt.subplots()
+fig.set_facecolor('gainsboro')
+
 ax.hist(auto['City mpg'] , color = 'grey')
 ax.set_title('Frequency of the mileage')
 ax.set_xlabel('City mileage, mpg')
@@ -129,6 +140,8 @@ plt.show()
 
 # 2.3) plot the frequency of the engine size
 fig, ax = plt.subplots()
+fig.set_facecolor('gainsboro')
+
 ax.hist(auto['Engine Size'], color = 'orange')
 ax.set_title('Imported cars engine size')
 ax.set_xlabel('Engine size')
@@ -140,6 +153,7 @@ plt.show()
 
 # 2.3) subplot the historams at the vertical order
 fig , (ax1,ax2,ax3,ax4) = plt.subplots(nrows = 4 , ncols = 1, figsize = (5,17))
+fig.set_facecolor('gainsboro')
 
 ax1.hist(auto['Num of Doors'] , color = 'brown')
 ax1.set_title('Risk factor (-3 is the most risky, 3 is the safest)')
@@ -181,6 +195,8 @@ plt.show()
 
 # 2.4) subplot the histograms at the horizontal order 
 fig, (ax1, ax2, ax3) = plt.subplots(nrows = 1, ncols = 3, figsize = (15,5))
+fig.set_facecolor('gainsboro')
+
 ax1.hist(auto['Fuel Type'] , color = 'blue')
 ax1.set_title('Fuel type of the imported cars')
 ax1.set_xlabel('Fuel Type')
