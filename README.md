@@ -21,6 +21,7 @@ The dataset consists of the files:
 - [] Create line plots
 - [x] Create histograms: single and subplots( vertical and horizontal order)
 - [] Create bar charts
+- [] Modify the charts appearance (the figure background color, the plot background color, the font size/color, the legend)
 
 ### 1.4) Answer the following questions:
 - [] Top 3 most expensive car models
@@ -29,7 +30,7 @@ The dataset consists of the files:
 - [] What the body style of the imported cars is more in demand?
 - [] What cars are more imported: 2-doors or 4-doors?
 - [] Find out that was the most popular body style of the imported cars (sedan,wagon, etc)
-- [] Find out the risk factor of  the top 3 most popular imported cars ( the risk factor =-3, the car is risky; the risk factor=3, the car is safe)
+- [] Find out the risk factor of  the top 3 most popular imported cars ( the risk factor =-3, the car is risky; the risk     factor=3, the car is safe)
 - [] Determine what were the relative average loss (year insurance) for the top 3 popular vehicles at each category (2-doors,4-doors, etc)
 
 
