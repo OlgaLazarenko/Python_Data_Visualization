@@ -150,7 +150,7 @@ ax.set_axisbelow(True)
 ax.set_facecolor('cornsilk')
 plt.show()
 
-# 2.3) subplot the historams at the vertical order
+# 2.4) subplot the historams at the vertical order
 fig , (ax1,ax2,ax3,ax4) = plt.subplots(nrows = 4 , ncols = 1, figsize = (5,17))
 fig.set_facecolor('gainsboro')
 
@@ -192,7 +192,7 @@ ax4.set_facecolor('beige')
 fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_RiskFactor_Mileage_EngineType_NumCylinders.png')
 plt.show()
 
-# 2.4) subplot the histograms at the horizontal order 
+# 2.5) subplot the histograms at the horizontal order 
 fig, (ax1, ax2, ax3) = plt.subplots(nrows = 1, ncols = 3, figsize = (15,5))
 fig.set_facecolor('gainsboro')
 
@@ -220,7 +220,7 @@ ax3.grid( color = 'grey' , linestyle = 'dashed', linewidth = 0.8)
 ax3.set_axisbelow(True)
 ax3.set_facecolor('linen')
 
-# save the figure to the image file
+# 2.6) save the figure to the image file
 fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_FuelType_NumDoors_BodyStyle.png')
 plt.show()
 
@@ -229,22 +229,38 @@ plt.show()
 
 # 3) ----  Bar chart   ----
 # show the number of imported cars by the car's body style
-auto['Body Style'].value_counts().plot(kind = 'bar', figsize = (10,8) , rot = 30 , color = 'purple')
-plt.title('Number of imported cars by the body style')
-plt.xlabel('Body style')
-plt.ylabel('Number of imported cars')
+fig, ax = plt.subplots()
+fig.set_facecolor('lightcyan')
+# count the occurences of each class
+data = auto['Body Style'].value_counts()
+# get x and y data
+points = data.index
+frequency = data.values
+# create bar chart
+ax.bar(points,frequency)
+# set title and labels
+ax.set_title('Number of imported cars by body style')
+ax.set_xlabel('Body style')
+ax.set_ylabel('Number of imported cars')
+ax.set_facecolor('beige')
+ax.legend()
+
+plt.show()
 
 
-
+'''
 numbers = auto['Body Style'].value_counts()
 print(numbers)
+print()
 print("***")
+
 for num in numbers :
     print(num)
 print()
 for i in numbers:
     plt.text( x = i , y = data , s = f"{auto}")
 plt.tight_layout()
+
 
 
 plt.show()
@@ -257,5 +273,5 @@ fig , ax = plt.subplots()
 avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 print(avg_city_mpg)
-
+'''
 
