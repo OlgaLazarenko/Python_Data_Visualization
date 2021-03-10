@@ -31,7 +31,7 @@ print()
 print()
 
 # _____________________________________________________________________________________
-
+'''
 # 1) ----  Scatter Plot  ----
 
 
@@ -226,9 +226,10 @@ plt.show()
 
 # _________________________________________________________________________________________________________________
 
-
+'''
 # 3) ----  Bar chart   ----
-# show the number of imported cars by the car's body style
+
+# 3.1) bar chart: number of imported cars by the car's body style
 fig, ax = plt.subplots()
 fig.set_facecolor('lightcyan')
 # count the occurences of each class
@@ -242,6 +243,25 @@ ax.bar(points,frequency)
 ax.set_title('Number of imported cars by body style')
 ax.set_xlabel('Body style')
 ax.set_ylabel('Number of imported cars')
+ax.set_facecolor('beige')
+ax.legend()
+
+plt.show()
+
+# 3.2) bar chart : price of the imported cars by the car make
+fig, ax = plt.subplots()
+fig.set_facecolor('lightcyan')
+# count the occurences of each class
+data = auto.groupby('Body Style')['Price'].sum()
+# get x and y data
+points = data.index
+frequency = data.values
+# create bar chart
+ax.bar(points,frequency)
+# set title and labels
+ax.set_title('Price of imported cars')
+ax.set_xlabel('Body style')
+ax.set_ylabel('Amount, $')
 ax.set_facecolor('beige')
 ax.legend()
 
