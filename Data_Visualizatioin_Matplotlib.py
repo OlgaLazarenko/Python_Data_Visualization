@@ -4,6 +4,10 @@
 # import Matplotlib library
 import matplotlib.pyplot as plt
 import pandas as pd
+import pandas_schema
+
+
+
 
 # work with the data file 'Auto_Import_1985.csv'
 # read the file
@@ -29,6 +33,55 @@ auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\A
 print(auto.head())
 print()
 print()
+
+
+# Data Validation
+# define the checking methonds
+
+def decimal_check(dec_number):
+    try:
+        Decimal(dec_number)
+    except InvalidOperation:
+        return False
+    return True
+
+def integer_check(int_number):
+    try:Please make sure that you do not authorize other agencies to submit your resume for this same Position & ID. This is to save your profile from getting rejected because of duplication!
+
+ 
+
+Title - Data Analyst I
+
+Job ID - ABOJP00011241
+
+Location – Waukegan, IL
+
+Duration – 7 Months (possibility of extension)
+
+Rate - $ 28/Hr on W2 (Without Benefits)
+        int(int_number)
+    except ValueError:
+        return False
+    return True
+
+decimal_validation = [CustomerElementValidation(lambda d: decimal_check(d) , 'is not decimal')]
+integer_validation = [CustomerElementValidation(lambda i: integer_check(b) , 'is not integer')]
+null_validation = [CustomerElementValidation(lambda d: d is not  np.nan, 'this field cannot be null']
+
+# define a validation schema
+#define what rules will be applied for each of the columns to be read from the file
+schema = pandas_schema.Schema([
+    Column('Num of Doors')
+    Column('Length')
+    Column('Width')
+    Column('Height')
+    Column('Curb Weight')
+    Column('Num of Cylinders')
+    Column('Engine Size')
+
+
+])
+
 
 # _____________________________________________________________________________________
 '''
@@ -238,7 +291,7 @@ data = auto['Body Style'].value_counts()
 points = data.index
 frequency = data.values
 # create bar chart
-ax.bar(points,frequency)
+ax.bar(points,frequency,color = 'forestgreen')
 # set title and labels
 ax.set_title('Number of imported cars by body style')
 ax.set_xlabel('Body style')
@@ -250,19 +303,20 @@ plt.show()
 
 # 3.2) bar chart : price of the imported cars by the car make
 fig, ax = plt.subplots()
-fig.set_facecolor('lightcyan')
+fig.set_facecolor('azure')
 # count the occurences of each class
 data = auto.groupby('Body Style')['Price'].sum()
+
 # get x and y data
 points = data.index
 frequency = data.values
 # create bar chart
-ax.bar(points,frequency)
+ax.bar(points,frequency,color = 'royalblue')
 # set title and labels
-ax.set_title('Price of imported cars')
+ax.set_title('Price of imported cars by the body style')
 ax.set_xlabel('Body style')
 ax.set_ylabel('Amount, $')
-ax.set_facecolor('beige')
+ax.set_facecolor('lightyellow')
 ax.legend()
 
 plt.show()
