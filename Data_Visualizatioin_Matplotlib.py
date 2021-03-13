@@ -71,15 +71,31 @@ null_validation = [CustomerElementValidation(lambda d: d is not  np.nan, 'this f
 # define a validation schema
 #define what rules will be applied for each of the columns to be read from the file
 schema = pandas_schema.Schema([
-    Column('Num of Doors')
-    Column('Length')
-    Column('Width')
-    Column('Height')
-    Column('Curb Weight')
-    Column('Num of Cylinders')
-    Column('Engine Size')
-
-
+    Column('Symboling'), integer_validation  #integer from -3 to 3
+    Column('Normalized Loss'), integer_validation   # integer from 65 to 256
+    Column('Make'), # text
+    Column('Fuel Type'), # diesel, gas
+    Column('Aspiration'), # text
+    Column('Num of Doors'), # text (two, four)
+    Column('Body Style'), # text: hardtop, wagon, sedan, hatchback, convertible
+    Column('Drive Wheels'), # text: 4wd, fwd, rwd
+    Column('Engine Location'), # text: front, rear
+    Column('Wheel Base'), decimal_validation  # decimal from 86.6 to 120.9
+    Column('Length'),  decimal_validation   # decimal from 141.1 to 208.1
+    Column('Width'), decimal_validation  # decimal from 60.3 to 72.3
+    Column('Height'), decimal_validation   # decimal from 47.8 to 59.8
+    Column('Curb Weight'), integer_validation   # integer from 1488 to 4066
+    Column('Num of Cylinders'), # text: eight, five, four, six, three, twelve, two
+    Column('Engine Size'),  integer_validation # integer from 61 to 326
+    Column('Fuel System'), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
+    Column('Bore'),decimal_validation  # decimal from 2.54 to 3.94
+    Column('Stroke'), decimal_validation #decimal from 2.07 to 4.17
+    Column('Compression Ratio'), integer_validation #  integer: from 7 to 23
+    Column('Horsepower'), integer_validation  # integer:from 48 to 288
+    Column('Peak rmp'), integer_validation  # integer: from 4150 to 6600
+    Column('City mpg'), integer_validation  #integer: from 13 to 49
+    Column('Highway mpg'), integer_validation  # integer: 16 to 54
+    Column('Price')  integer_validation  # integer from 5118 to 45400
 ])
 
 
