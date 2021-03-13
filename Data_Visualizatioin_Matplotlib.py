@@ -10,30 +10,6 @@ import pandas_schema
 
 
 # work with the data file 'Auto_Import_1985.csv'
-# read the file
-
-auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' ,
-                        usecols = [ 'Symboling' ,
-                                    'Make' ,
-                                    'Fuel Type' ,
-                                    'Aspiration' ,
-                                    'Num of Doors' , 
-                                    'Body Style' , 
-                                    'Drive Wheels' ,
-                                    'Num of Cylinders' ,
-                                    'Horsepower' ,
-                                    'City mpg' ,
-                                    'Highway mpg' ,
-                                    'Curb Weight',
-                                    'Engine Size' ,
-                                    'Engine Type' ,
-                                    'Price']
-                        )
-# print the first 5 rows of the file
-print(auto.head())
-print()
-print()
-
 
 # Data Validation
 # define the checking methonds
@@ -46,20 +22,8 @@ def decimal_check(dec_number):
     return True
 
 def integer_check(int_number):
-    try:Please make sure that you do not authorize other agencies to submit your resume for this same Position & ID. This is to save your profile from getting rejected because of duplication!
+    try:
 
- 
-
-Title - Data Analyst I
-
-Job ID - ABOJP00011241
-
-Location – Waukegan, IL
-
-Duration – 7 Months (possibility of extension)
-
-Rate - $ 28/Hr on W2 (Without Benefits)
-        int(int_number)
     except ValueError:
         return False
     return True
@@ -97,6 +61,34 @@ schema = pandas_schema.Schema([
     Column('Highway mpg'), integer_validation  # integer: 16 to 54
     Column('Price')  integer_validation  # integer from 5118 to 45400
 ])
+
+
+# read the file
+
+auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' ,
+                        usecols = [ 'Symboling' ,
+                                    'Make' ,
+                                    'Fuel Type' ,
+                                    'Aspiration' ,
+                                    'Num of Doors' , 
+                                    'Body Style' , 
+                                    'Drive Wheels' ,
+                                    'Num of Cylinders' ,
+                                    'Horsepower' ,
+                                    'City mpg' ,
+                                    'Highway mpg' ,
+                                    'Curb Weight',
+                                    'Engine Size' ,
+                                    'Engine Type' ,
+                                    'Price']
+                        )
+# print the first 5 rows of the file
+print(auto.head())
+print()
+print()
+
+
+
 
 
 # _____________________________________________________________________________________
