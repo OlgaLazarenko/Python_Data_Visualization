@@ -41,10 +41,14 @@ schema = Schema ([
     Column('City mpg'), [InRangeValidation(13,49)]  #integer: from 13 to 49
     Column('Highway mpg'), [InRangeValidation(16,54)]  # integer: 16 to 54
     Column('Price')  [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
-
-
 ])
 
+test_file = pd.read_csv(StringIO('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
+errors = schema.validate(test_file)
+for error in errors:
+    print(error)
+
+    
 # work with the data file 'Auto_Import_1985.csv'
 
 # Data Validation
