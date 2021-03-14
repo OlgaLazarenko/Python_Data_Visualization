@@ -4,20 +4,18 @@
 # import Matplotlib library
 import matplotlib.pyplot as plt
 import pandas as pd
-import pandas_schema
+
 
 from io import StringIO
 from pandas_schema import Column, Schema
-from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhitespaceValidation,
-                                    CanConvertValidation, MatchesPatternValidation,
-                                    InRangeValidation, InListValidation
+from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhitespaceValidation, CanConvertValidation, MatchesPatternValidation, InRangeValidation, InListValidation
 
 
 
 schema = Schema ([
-    Column('Symboling', [InRangeValidation(-3,3)] ) #integer from -3 to 3
-    Column('Normalized Loss', [InRangeValidation(65,256)] )  # integer from 65 to 256
-    Column('Make',[LeadingWhitespaceValidation(), TrailingWhitespaceValidation()] )  # text
+    Column('Symboling', [InRangeValidation(-3,3)] ) ,         #integer from -3 to 3
+    Column('Normalized Loss', [InRangeValidation(65,256)] )  , # integer from 65 to 256
+    Column('Make',[LeadingWhitespaceValidation(), TrailingWhitespaceValidation()] )  , # text
     Column('Fuel Type', [InListValidation(['diesel', 'gas'])]), # diesel, gas
     Column('Aspiration'), # text
     Column('Num of Doors' , [InListValidation(['two', 'four'])]), # text (two, four)
@@ -25,21 +23,21 @@ schema = Schema ([
     # text: hardtop, wagon, sedan, hatchback, convertible
     Column('Drive Wheels' , [InListValidation(['4wd', 'fwd' , 'rwd'])]), # text: 4wd, fwd, rwd
     Column('Engine Location' , [InListValidation(['front', 'rear'])]), # text: front, rear
-    Column('Wheel Base' , [InRangeValidation([86.6,120.9])] ) # decimal from 86.6 to 120.9
-    Column('Length' , [InRangeValidation(65,256)] )  # decimal from 141.1 to 208.1
-    Column('Width' , [InRangeValidation(60.3,72.3)] ) # decimal from 60.3 to 72.3
-    Column('Height' , [InRangeValidation(47.8,59.8)] )   # decimal from 47.8 to 59.8
-    Column('Curb Weight' , [InRangeValidation(1488,4066)] )   # integer from 1488 to 4066
-    Column('Num of Cylinders' , [InListValidation(['two','four','three','five','six','eight','twelve'])]), # text: eight, five, four, six, three, twelve, two
-    Column('Engine Size' , [InRangeValidation(61,326)) # integer from 61 to 326
-    Column('Fuel System' , [InListValidation(['1bbl', '2bbl', '4bbl', 'idi','mfi','mpfi','spdi','spfi']')]), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
-    Column('Bore' , [InRangeValidation(2.54,3.94)] )  # decimal from 2.54 to 3.94
-    Column('Stroke' [InRangeValidation(2.07,4.17)] ) #decimal from 2.07 to 4.17
+    Column('Wheel Base' , [InRangeValidation([86.6,120.9])] ) ,  # decimal from 86.6 to 120.9
+    Column('Length' , [InRangeValidation(65,256)] )  ,  # decimal from 141.1 to 208.1
+    Column('Width' , [InRangeValidation(60.3,72.3)] ) ,  # decimal from 60.3 to 72.3
+    Column('Height' , [InRangeValidation(47.8,59.8)] ) ,   # decimal from 47.8 to 59.8
+    Column('Curb Weight' , [InRangeValidation(1488,4066)] ) ,   # integer from 1488 to 4066
+    Column('Num of Cylinders' , [InListValidation(['two','four','three','five','six','eight','twelve'])]) , # text: eight, five, four, six, three, twelve, two
+    Column('Engine Size' , [InRangeValidation(61,326)]) ,  # integer from 61 to 326
+    Column('Fuel System' , [InListValidation(['1bbl', '2bbl', '4bbl', 'idi','mfi','mpfi','spdi','spfi'])]), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
+    Column('Bore' , [InRangeValidation(2.54,3.94)] ) , # decimal from 2.54 to 3.94
+    Column('Stroke' [InRangeValidation(2.07,4.17)] ) , #decimal from 2.07 to 4.17
     Column('Compression Ratio' , [InRangeValidation(7,23)] ), #  integer: from 7 to 23
     Column('Horsepower' , [InRangeValidation(48,288)] ),  # integer:from 48 to 288
-    Column('Peak rmp'), [InRangeValidation(4150,6600)]  # integer: from 4150 to 6600
-    Column('City mpg'), [InRangeValidation(13,49)]  #integer: from 13 to 49
-    Column('Highway mpg'), [InRangeValidation(16,54)]  # integer: 16 to 54
+    Column('Peak rmp'), [InRangeValidation(4150,6600)]  , # integer: from 4150 to 6600
+    Column('City mpg'), [InRangeValidation(13,49)]  , #integer: from 13 to 49
+    Column('Highway mpg'), [InRangeValidation(16,54)] ,  # integer: 16 to 54
     Column('Price')  [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
 ])
 
@@ -48,7 +46,7 @@ errors = schema.validate(test_file)
 for error in errors:
     print(error)
 
-    
+
 # work with the data file 'Auto_Import_1985.csv'
 
 # Data Validation
