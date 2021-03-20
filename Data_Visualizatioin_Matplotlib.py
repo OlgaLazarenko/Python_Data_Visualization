@@ -32,13 +32,13 @@ schema = Schema ([
     Column('Engine Size' , [InRangeValidation(61,326)]) ,  # integer from 61 to 326
     Column('Fuel System' , [InListValidation(['1bbl', '2bbl', '4bbl', 'idi','mfi','mpfi','spdi','spfi'])]), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
     Column('Bore' , [InRangeValidation(2.54,3.94)] ) , # decimal from 2.54 to 3.94
-    Column('Stroke' [InRangeValidation(2.07,4.17)] ) , #decimal from 2.07 to 4.17
+    Column('Stroke', [InRangeValidation(2.07,4.17)] ) , #decimal from 2.07 to 4.17
     Column('Compression Ratio' , [InRangeValidation(7,23)] ), #  integer: from 7 to 23
     Column('Horsepower' , [InRangeValidation(48,288)] ),  # integer:from 48 to 288
     Column('Peak rmp'), [InRangeValidation(4150,6600)]  , # integer: from 4150 to 6600
     Column('City mpg'), [InRangeValidation(13,49)]  , #integer: from 13 to 49
     Column('Highway mpg'), [InRangeValidation(16,54)] ,  # integer: 16 to 54
-    Column('Price')  [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
+    Column('Price'), [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
 ])
 
 test_file = pd.read_csv(StringIO('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
