@@ -41,7 +41,7 @@ schema = Schema ([
     Column('Price'), [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
 ])
 
-test_file = pd.read_csv(StringIO('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
+test_file = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv')
 errors = schema.validate(test_file)
 for error in errors:
     print(error)
