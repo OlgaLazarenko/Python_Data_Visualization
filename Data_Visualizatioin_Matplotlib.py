@@ -19,8 +19,7 @@ schema = Schema ([
     Column('Fuel Type', [InListValidation(['diesel', 'gas'])]), # diesel, gas
     Column('Aspiration'), # text
     Column('Num of Doors' , [InListValidation(['two', 'four'])]), # text (two, four)
-    Column('Body Style' , [InListValidation(['hardtop', 'wagon','sedan','hatchback', 'convertible'])] ), 
-    # text: hardtop, wagon, sedan, hatchback, convertible
+    Column('Body Style' , [InListValidation(['hardtop', 'wagon','sedan','hatchback', 'convertible'])] ), # text: hardtop, wagon, sedan, hatchback, convertible
     Column('Drive Wheels' , [InListValidation(['4wd', 'fwd' , 'rwd'])]), # text: 4wd, fwd, rwd
     Column('Engine Location' , [InListValidation(['front', 'rear'])]), # text: front, rear
     Column('Wheel Base' , [InRangeValidation([86.6,120.9])] ) ,  # decimal from 86.6 to 120.9
@@ -28,6 +27,7 @@ schema = Schema ([
     Column('Width' , [InRangeValidation(60.3,72.3)] ) ,  # decimal from 60.3 to 72.3
     Column('Height' , [InRangeValidation(47.8,59.8)] ) ,   # decimal from 47.8 to 59.8
     Column('Curb Weight' , [InRangeValidation(1488,4066)] ) ,   # integer from 1488 to 4066
+    Column('Engine Type'),[InListValidation(['ohc', 'dohcv', 'l', 'ohc', 'ohcf', 'ohcv', 'rotor'])] , # text
     Column('Num of Cylinders' , [InListValidation(['two','four','three','five','six','eight','twelve'])]) , # text: eight, five, four, six, three, twelve, two
     Column('Engine Size' , [InRangeValidation(61,326)]) ,  # integer from 61 to 326
     Column('Fuel System' , [InListValidation(['1bbl', '2bbl', '4bbl', 'idi','mfi','mpfi','spdi','spfi'])]), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
