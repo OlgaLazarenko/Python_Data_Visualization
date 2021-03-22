@@ -11,9 +11,10 @@ from pandas_schema import Column, Schema
 from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhitespaceValidation, CanConvertValidation, MatchesPatternValidation, InRangeValidation, InListValidation
 
 
+auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' )
 
 schema = Schema ([
-    Column('Symboling', [InRangeValidation(-3,3)] ) ,         #integer from -3 to 3
+    Column('Symboling', [InRangeValidation(-3,3)] ) ,  # integer from -3 to 3 
     Column('Normalized Loss', [InRangeValidation(65,256)] )  , # integer from 65 to 256
     Column('Make',[LeadingWhitespaceValidation(), TrailingWhitespaceValidation()] )  , # text
     Column('Fuel Type', [InListValidation(['diesel', 'gas'])]), # diesel, gas
@@ -27,7 +28,7 @@ schema = Schema ([
     Column('Width' , [InRangeValidation(60.3,72.3)] ) ,  # decimal from 60.3 to 72.3
     Column('Height' , [InRangeValidation(47.8,59.8)] ) ,   # decimal from 47.8 to 59.8
     Column('Curb Weight' , [InRangeValidation(1488,4066)] ) ,   # integer from 1488 to 4066
-    Column('Engine Type'),[InListValidation(['ohc', 'dohcv', 'l', 'ohc', 'ohcf', 'ohcv', 'rotor'])] , # text
+    Column('Engine Type'),[InListValidation(['dohc', 'dohcv', 'l', 'ohc', 'ohcf', 'ohcv', 'rotor'])] , # text
     Column('Num of Cylinders' , [InListValidation(['two','four','three','five','six','eight','twelve'])]) , # text: eight, five, four, six, three, twelve, two
     Column('Engine Size' , [InRangeValidation(61,326)]) ,  # integer from 61 to 326
     Column('Fuel System' , [InListValidation(['1bbl', '2bbl', '4bbl', 'idi','mfi','mpfi','spdi','spfi'])]), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
@@ -41,7 +42,9 @@ schema = Schema ([
     Column('Price'), [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
 ])
 
-test_file = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv')
+test_file = pd.read_csv(('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
+
+
 errors = schema.validate(test_file)
 for error in errors:
     print(error)
@@ -348,8 +351,6 @@ ax.set_title('Number of imported cars by body style')
 ax.set_xlabel('Body style')
 ax.set_ylabel('Number of imported cars')
 ax.set_facecolor('beige')
-ax.legend()
-
 plt.show()
 
 # 3.2) bar chart : price of the imported cars by the car make
@@ -368,9 +369,42 @@ ax.set_title('Price of imported cars by the body style')
 ax.set_xlabel('Body style')
 ax.set_ylabel('Amount, $')
 ax.set_facecolor('lightyellow')
-ax.legend()
-
 plt.show()
+
+
+# 3.3) bar charts at the same figure
+fig, (ax1,ax2) = plt.subplots(nrows =2, ncols = 1, figsize = (4,16))
+
+# the first bar chart; count the occurences of each class/body style
+data1 = auto['Body Style'].value_counts()
+# get x and y data
+points1 = data1.index
+frequency1 = data1.values
+# create bar chart
+ax1.bar(points1,frequency1,color = 'forestgreen')
+# set title and labels
+ax1.set_title('Number of imported cars by body style')
+ax1.set_xlabel('Body style')
+ax1.set_ylabel('Number of imported cars')
+ax1.set_facecolor('beige')
+
+#  the second bar chart; count the occurences of each class/body style 
+data2 = auto.groupby('Body Style')['Price'].sum()
+
+# get x and y data
+points2 = data2.index
+frequency2 = data2.values
+# create bar chart
+ax2.bar(points2 , frequency2 , color = 'royalblue')
+# set title and labels
+ax2.set_title('Price of imported cars by the body style')
+ax2.set_xlabel('Body style')
+ax2.set_ylabel('Amount, $')
+ax2.set_facecolor('lightyellow')
+
+# fig.savefig('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Histograms_BodyStyle_NumOfCars_Price.png')
+plt.show()
+
 
 
 '''
