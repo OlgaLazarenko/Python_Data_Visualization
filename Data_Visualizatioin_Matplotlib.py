@@ -141,7 +141,12 @@ diesel_cars = auto[auto['Fuel Type'] == 'diesel']
 print(diesel_cars)
 num_diesel_cars = diesel_cars.count()
 print(num_diesel_cars)
-
+print("********************************************")
+gasoline_cars = auto[auto['Fuel Type'] == 'gas']
+print(gasoline_cars)
+num_gasoline_cars = gasoline_cars.count()
+print(num_gasoline_cars)
+print("*********************************************")
 # _____________________________________________________________________________________
 '''
 # 1) ----  Scatter Plot  ----
