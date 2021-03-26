@@ -164,22 +164,34 @@ print('_______________________________________________________')
 
 # What the body style of the imported cars is more in demand?
 print("What the body style of the imported cars is more popular?")
-# unique body styles
-body_style = auto['Body Style'].unique()
+
+body_style = auto['Body Style'].unique() # unique body styles
 print('Car body styles: ')
 print(body_style)
 
-# create a dictionary car body type: num of cars
-dict_body_type_num = dict()
 
+dict_body_style_num = dict() # create a dictionary car body type: num of cars
+list_body_style_num =[]
 for style in body_style :
     num_cars = len(auto[auto['Body Style'] == style])
     print(style + ' : ' + str(num_cars))
-    # populate the dictionary
-    
-    dict_body_type_num[style] = num_cars
+    dict_body_style_num[style] = num_cars # populate the dictionary
+    list_body_style_num.append(num_cars)
 
-print(dict_body_type_num)
+print(dict_body_style_num)
+print(list_body_style_num)
+
+sorted_list = sorted(list_body_style_num, reverse = True)
+print(sorted_list)
+max_num = sorted_list[0]
+print(max_num)
+
+position_value = list_body_style_num.index(max_num)
+position_key = position_value
+body_style = body_style[position_key]
+print(body_style)
+
+
 # What cars are more imported: 2-doors or 4-doors?
 
 
