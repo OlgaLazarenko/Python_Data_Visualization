@@ -190,7 +190,8 @@ body_style = list_body_style[position_body_style]
 print()
 print(body_style + ' is the most popular car body style')
 percent = round((100 * max_num / total_num_cars),1)
-print(str(max_num) + ' cars are sedans and it is ' + str(percent)+'% of all imported cars')
+print(str(max_num) + ' cars are sedans and it is  ' + str(percent)+'% of all imported cars')
+print('___________________________________________________')
 
 
 

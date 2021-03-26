@@ -27,7 +27,7 @@ The dataset consists of the files:
 - [] Top 3 most expensive cars (average price)
 - [] Top 3 car models with highest mileage (city, highway)
 - [x] What cars are more imported: gas of diesel fuel type?
-- [] What the body style of the imported cars is more in demand?
+- [x] What the body style of the imported cars is more in demand?
 - [] What cars are more imported: 2-doors or 4-doors?
 - [] Find out that was the most popular body style of the imported cars (sedan,wagon, etc)
 - [] Find out the risk factor of  the top 3 most popular imported cars ( the risk factor =-3, the car is risky; the risk     factor=3, the car is safe)
