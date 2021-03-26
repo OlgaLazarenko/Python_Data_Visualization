@@ -165,30 +165,28 @@ print('_______________________________________________________')
 # What the body style of the imported cars is more in demand?
 print("What the body style of the imported cars is more popular?")
 
-body_style = auto['Body Style'].unique() # unique body styles
+list_body_style = auto['Body Style'].unique() # unique body styles
 print('Car body styles: ')
-print(body_style)
+for style in list_body_style :
+    print(style)
 
-
-dict_body_style_num = dict() # create a dictionary car body type: num of cars
-list_body_style_num =[]
-for style in body_style :
+print()
+print("Car body style: number of cars")
+list_num =[] # this list will contain the number of cars for each body style
+for style in list_body_style :
     num_cars = len(auto[auto['Body Style'] == style])
-    print(style + ' : ' + str(num_cars))
-    dict_body_style_num[style] = num_cars # populate the dictionary
-    list_body_style_num.append(num_cars)
+    print(style + ': ' + str(num_cars))
+    list_num.append(num_cars) # populate the list
 
-print(dict_body_style_num)
-print(list_body_style_num)
+print()
 
-sorted_list = sorted(list_body_style_num, reverse = True)
-print(sorted_list)
-max_num = sorted_list[0]
-print(max_num)
+sorted_list_num = sorted(list_num, reverse = True)
+max_num = sorted_list_num[0]
 
-position_value = list_body_style_num.index(max_num)
-position_key = position_value
-body_style = body_style[position_key]
+
+position_num = list_num.index(max_num)
+position_body_style = position_num
+body_style = list_body_style[position_body_style]
 print(body_style)
 
 
