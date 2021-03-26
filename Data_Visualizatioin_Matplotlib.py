@@ -135,7 +135,12 @@ print()
 
 
 
-
+# Which cars are more imported: gas of diesel fuel type?
+print('Which cars are more imported: gas of diesel fuel type?')
+diesel_cars = auto[auto['Fuel Type'] == 'diesel']
+print(diesel_cars)
+num_diesel_cars = diesel_cars.count()
+print(num_diesel_cars)
 
 # _____________________________________________________________________________________
 '''
@@ -373,7 +378,7 @@ plt.show()
 
 
 # 3.3) bar charts at the same figure
-fig, (ax1,ax2) = plt.subplots(nrows =2, ncols = 1, figsize = (4,16))
+fig, (ax1,ax2) = plt.subplots(nrows = 1, ncols = 2, figsize = (15,5))
 
 # the first bar chart; count the occurences of each class/body style
 data1 = auto['Body Style'].value_counts()
