@@ -134,8 +134,8 @@ print()
 print()
 
 
-
-# Which cars are more imported: gas of diesel fuel type?
+print('_______________________________________________________')
+# Which cars are more imported: gaspline of diesel fuel type?
 print('Which cars are more imported: gas of diesel fuel type?')
 diesel_cars = auto[auto['Fuel Type'] == 'diesel'] # imported cars of diesel fuel type
 num_diesel_cars = len(diesel_cars.index)
@@ -144,11 +144,23 @@ num_diesel_cars = len(diesel_cars.index)
 gasoline_cars = auto[auto['Fuel Type'] == 'gas'] # this data frame only contains the gasoline type cars
 num_gasoline_cars = len(gasoline_cars.index)
 print()
-print("Number of imported cars by the fuel type: ")
-print('Gasoline: ' + str(num_gasoline_cars))
-print('Diesel: ' + str(num_diesel_cars))
-print()
+total_num_cars = len(auto.index)
+percent_gasoline_cars = round((100 * num_gasoline_cars/total_num_cars),1)
+percent_diesel_cars = round((100 * num_diesel_cars/total_num_cars),1)
 
+print('Total number of imported cars: ' + str(total_num_cars))
+print("Number of imported cars by the fuel type: ")
+print('Gasoline: ' + str(num_gasoline_cars) + '(' + str(percent_gasoline_cars) + ' %)')
+print('Diesel: ' + str(num_diesel_cars) + '(' + str(percent_diesel_cars) + ' %)')
+print()
+print('Conclusion: ')
+if num_gasoline_cars > num_diesel_cars :
+    print(str(percent_gasoline_cars) + " % of the imported cars are gasoline cars" )
+elif num_diesel_cars > num_gasoline_cars :
+    print(print(str(percent_diesel_cars) + "% of the imported cars are diesel cars" ))
+else:
+    print('Gasoline and diesel cars are imported at the some numbers')
+print('_______________________________________________________')
 # _____________________________________________________________________________________
 '''
 # 1) ----  Scatter Plot  ----
