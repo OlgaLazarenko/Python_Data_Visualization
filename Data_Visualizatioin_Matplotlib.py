@@ -187,7 +187,12 @@ max_num = sorted_list_num[0]
 position_num = list_num.index(max_num)
 position_body_style = position_num
 body_style = list_body_style[position_body_style]
-print(body_style)
+print()
+print(body_style + ' is the most popular car body style')
+percent = round((100 * max_num / total_num_cars),1)
+print(str(max_num) + ' cars are sedans and it is ' + str(percent)+'% of all imported cars')
+
+
 
 
 # What cars are more imported: 2-doors or 4-doors?
