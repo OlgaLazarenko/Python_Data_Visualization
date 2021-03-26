@@ -161,7 +161,28 @@ elif num_diesel_cars > num_gasoline_cars :
 else:
     print('Gasoline and diesel cars are imported at the some numbers')
 print('_______________________________________________________')
-# _____________________________________________________________________________________
+
+# What the body style of the imported cars is more in demand?
+print("What the body style of the imported cars is more popular?")
+# unique body styles
+body_style = auto['Body Style'].unique()
+print('Car body styles: ')
+print(body_style)
+
+# create a dictionary car body type: num of cars
+dict_body_type_num = dict()
+
+for style in body_style :
+    num_cars = len(auto[auto['Body Style'] == style])
+    print(style + ' : ' + str(num_cars))
+    # populate the dictionary
+    
+    dict_body_type_num[style] = num_cars
+
+print(dict_body_type_num)
+# What cars are more imported: 2-doors or 4-doors?
+
+
 '''
 # 1) ----  Scatter Plot  ----
 
@@ -454,6 +475,6 @@ fig , ax = plt.subplots()
 # group by number of cylinders , average city speed 
 avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
-print(avg_city_mpg)
+
 '''
 
