@@ -24,9 +24,9 @@ The dataset consists of the files:
 - [] Modify the charts appearance (the figure background color, the plot background color, the font size/color, the legend)
 
 ### 1.4) Answer the following questions:
-- [] Top 3 most expensive car models
+- [] Top 3 most expensive cars (average price)
 - [] Top 3 car models with highest mileage (city, highway)
-- [] What cars are more imported: gas of diesel fuel type?
+- [x] What cars are more imported: gas of diesel fuel type?
 - [] What the body style of the imported cars is more in demand?
 - [] What cars are more imported: 2-doors or 4-doors?
 - [] Find out that was the most popular body style of the imported cars (sedan,wagon, etc)
