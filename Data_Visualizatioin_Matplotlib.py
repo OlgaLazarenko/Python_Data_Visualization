@@ -137,16 +137,18 @@ print()
 
 # Which cars are more imported: gas of diesel fuel type?
 print('Which cars are more imported: gas of diesel fuel type?')
-diesel_cars = auto[auto['Fuel Type'] == 'diesel']
-print(diesel_cars)
-num_diesel_cars = diesel_cars.count()
-print(num_diesel_cars)
-print("********************************************")
-gasoline_cars = auto[auto['Fuel Type'] == 'gas']
-print(gasoline_cars)
-num_gasoline_cars = gasoline_cars.count()
-print(num_gasoline_cars)
-print("*********************************************")
+diesel_cars = auto[auto['Fuel Type'] == 'diesel'] # imported cars of diesel fuel type
+num_diesel_cars = len(diesel_cars.index)
+
+
+gasoline_cars = auto[auto['Fuel Type'] == 'gas'] # this data frame only contains the gasoline type cars
+num_gasoline_cars = len(gasoline_cars.index)
+print()
+print("Number of imported cars by the fuel type: ")
+print('Gasoline: ' + str(num_gasoline_cars))
+print('Diesel: ' + str(num_diesel_cars))
+print()
+
 # _____________________________________________________________________________________
 '''
 # 1) ----  Scatter Plot  ----
@@ -343,7 +345,7 @@ plt.show()
 
 # _________________________________________________________________________________________________________________
 
-'''
+
 # 3) ----  Bar chart   ----
 
 # 3.1) bar chart: number of imported cars by the car's body style
@@ -417,7 +419,6 @@ plt.show()
 
 
 
-'''
 numbers = auto['Body Style'].value_counts()
 print(numbers)
 print()
