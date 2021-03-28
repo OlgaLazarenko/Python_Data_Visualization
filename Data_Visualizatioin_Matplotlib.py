@@ -193,9 +193,36 @@ percent = round((100 * max_num / total_num_cars),1)
 print(str(max_num) + ' cars are sedans and it is  ' + str(percent)+'% of all imported cars')
 print('___________________________________________________')
 
+print()
+# What cars are more in demand: 2-doors or  4-doors ?
+print('What cars are more in demand: 2-doors or  4-doors ?')
+list_doors = auto['Num of Doors'].unique()
 
+print('Number of doors :')
+for door in list_doors :
+    print(door)
 
+print()
 
+list_cars = []
+print('Number of doors : Number of cars')
+for door in list_doors :
+    num_cars = len(auto[auto['Num of Doors'] == door ])
+    print(door + ': ' + str(num_cars))
+    list_cars.append(num_cars) # populate the list
+
+print()
+print(list_doors)
+print(list_cars)
+
+sorted_list_cars = sorted(list_cars , reverse = True)
+max_cars = sorted_list_cars[0]
+print(max_cars)
+'''
+position_num = list_num_doors.index(max_num_cars)
+num_doors = list_num_doors[position_num]
+print(num_doors)
+'''
 # What cars are more imported: 2-doors or 4-doors?
 
 
