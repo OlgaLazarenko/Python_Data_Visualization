@@ -133,10 +133,11 @@ print(auto.head())
 print()
 print()
 
-
+print('Questions and Answers:')
 print('_______________________________________________________')
+print()
 # Which cars are more imported: gaspline of diesel fuel type?
-print('Which cars are more imported: gas of diesel fuel type?')
+print('Question: Which cars are more imported: gas of diesel fuel type?')
 diesel_cars = auto[auto['Fuel Type'] == 'diesel'] # imported cars of diesel fuel type
 num_diesel_cars = len(diesel_cars.index)
 
@@ -153,18 +154,20 @@ print("Number of imported cars by the fuel type: ")
 print('Gasoline: ' + str(num_gasoline_cars) + '(' + str(percent_gasoline_cars) + ' %)')
 print('Diesel: ' + str(num_diesel_cars) + '(' + str(percent_diesel_cars) + ' %)')
 print()
-print('Conclusion: ')
+print('Answer: ')
 if num_gasoline_cars > num_diesel_cars :
     print(str(percent_gasoline_cars) + " % of the imported cars are gasoline cars" )
 elif num_diesel_cars > num_gasoline_cars :
     print(print(str(percent_diesel_cars) + "% of the imported cars are diesel cars" ))
 else:
     print('Gasoline and diesel cars are imported at the some numbers')
+
 print('_______________________________________________________')
 
+print()
 # What the body style of the imported cars is more in demand?
-print("What the body style of the imported cars is more popular?")
-
+print("Question: What the body style of the imported cars is more popular?")
+print()
 list_body_style = auto['Body Style'].unique() # unique body styles
 print('Car body styles: ')
 for style in list_body_style :
@@ -187,15 +190,17 @@ max_num = sorted_list_num[0]
 position_num = list_num.index(max_num)
 position_body_style = position_num
 body_style = list_body_style[position_body_style]
+
 print()
-print(body_style + ' is the most popular car body style')
 percent = round((100 * max_num / total_num_cars),1)
-print(str(max_num) + ' cars are sedans and it is  ' + str(percent)+'% of all imported cars')
+print('Answer: ' + body_style + ' is the most popular car body style; ')
+print(str(max_num) + ' cars are sedans and it makes ' + str(percent)+'% of all imported cars')
 print('___________________________________________________')
 
 print()
 # What cars are more in demand: 2-doors or  4-doors ?
-print('What cars are more in demand: 2-doors or  4-doors ?')
+print('Question: What cars are more in demand: 2-door or 4-door?')
+print()
 list_doors = auto['Num of Doors'].unique()
 
 print('Number of doors :')
@@ -225,8 +230,9 @@ print(num_doors)
 
 print()
 percent = round((100 * max_cars / total_num_cars),1)
-print('Conclusion: ' + num_doors + '-door cars are more in demand and  they make '  + str(percent)+'% of all imported cars')
+print('Answer: ' + num_doors + '-door cars are more in demand and  they make '  + str(percent)+'% of all imported cars')
 
+print('_________________________________________________________')
 
 
 '''
