@@ -218,6 +218,17 @@ print(list_cars)
 sorted_list_cars = sorted(list_cars , reverse = True)
 max_cars = sorted_list_cars[0]
 print(max_cars)
+
+position = list_cars.index(max_cars)
+num_doors = list_doors[position]
+print(num_doors)
+
+print()
+percent = round((100 * max_cars / total_num_cars),1)
+print(num_doors + ' cars are more in demand: they make '  + str(percent)+'% of all imported cars')
+
+
+
 '''
 position_num = list_num_doors.index(max_num_cars)
 num_doors = list_num_doors[position_num]
@@ -520,4 +531,3 @@ avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 
 '''
-
