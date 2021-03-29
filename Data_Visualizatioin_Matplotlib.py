@@ -53,6 +53,10 @@ print()
 print('Check the data type of the columns:')
 print(auto.dtypes)
 print()
+print('Change the data type of the column <Price>  from object to integer')
+auto['Price'] = auto['Price'].astype(int)
+print(auto.dtypes)
+
 
 
 # work with the data file 'Auto_Import_1985.csv'
