@@ -54,9 +54,15 @@ print('Check the data type of the columns:')
 print(auto.dtypes)
 print()
 print('Change the data type of the column <Price>  from object to integer')
+'''
 auto['Price'] = auto['Price'].astype(str).astype(int)
 print(auto.dtypes)
-
+'''
+# remove rows with <?> at the column <Price> from the data frame
+auto_new = auto[auto['Price']  != '?']
+auto_new['Price'] = auto_new['Price'].astype(str).astype(int)
+print('auto_new')
+print(auto_new.dtypes)
 
 
 # work with the data file 'Auto_Import_1985.csv'
