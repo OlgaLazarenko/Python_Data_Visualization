@@ -63,6 +63,15 @@ auto_new = auto[auto['Price']  != '?']
 auto_new['Price'] = auto_new['Price'].astype(str).astype(int)
 print('auto_new')
 print(auto_new.dtypes)
+print()
+print("*---------------------------------------------------------*")
+print()
+
+print('Sort the DataFrame <auto_new> by the column <Price> the descending way')
+auto_new.sort_values( by = ['Price'] , inplace = True , ascending = False)
+print("Sorted <auto_new> DataFrame")
+print(auto_new)
+
 
 
 # work with the data file 'Auto_Import_1985.csv'
