@@ -54,7 +54,7 @@ print('Check the data type of the columns:')
 print(auto.dtypes)
 print()
 print('Change the data type of the column <Price>  from object to integer')
-auto['Price'] = auto['Price'].astype(int)
+auto['Price'] = auto['Price'].astype(str).astype(int)
 print(auto.dtypes)
 
 
