@@ -49,6 +49,11 @@ errors = schema.validate(test_file)
 for error in errors:
     print(error)
 
+print()
+print('Check the data type of the columns:')
+print(auto.dtypes)
+print()
+
 
 # work with the data file 'Auto_Import_1985.csv'
 
@@ -134,6 +139,16 @@ print()
 print()
 
 print('Questions and Answers:')
+print()
+print('______________________________________________________')
+print()
+print('Question: What are the top 3 most expensive cars?')
+print()
+# sort the data frame by the column Price, the descending way and obtain top 3 rows
+auto_sorted = auto.sort_values( by = ['Price'] , inplace = False , ascending = False)
+print(auto_sorted)
+
+print('Question: What are the top 3 car models with highest mileage (city, highway')
 print('_______________________________________________________')
 print()
 # Which cars are more imported: gaspline of diesel fuel type?
