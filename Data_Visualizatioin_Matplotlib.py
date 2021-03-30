@@ -9,7 +9,7 @@ import pandas as pd
 from io import StringIO
 from pandas_schema import Column, Schema
 from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhitespaceValidation, CanConvertValidation, MatchesPatternValidation, InRangeValidation, InListValidation
-
+print("Hello World ")
 
 auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' )
 
@@ -41,7 +41,7 @@ schema = Schema ([
     Column('Highway mpg'), [InRangeValidation(16,54)] ,  # integer: 16 to 54
     Column('Price'), [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
 ])
-
+'''
 test_file = pd.read_csv(('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
 
 
@@ -49,15 +49,17 @@ errors = schema.validate(test_file)
 for error in errors:
     print(error)
 
+
 print()
 print('Check the data type of the columns:')
 print(auto.dtypes)
 print()
 print('Change the data type of the column <Price>  from object to integer')
-'''
+
 auto['Price'] = auto['Price'].astype(str).astype(int)
 print(auto.dtypes)
 '''
+
 # remove rows with <?> at the column <Price> from the data frame
 auto_new = auto[auto['Price']  != '?']
 auto_new['Price'] = auto_new['Price'].astype(str).astype(int)
@@ -72,13 +74,14 @@ auto_new.sort_values( by = ['Price'] , inplace = True , ascending = False)
 print("Sorted <auto_new> DataFrame")
 print(auto_new)
 
-
-
+# group by <Body Style>, aggregate(max, min, avg)
+print(auto_new.groupby('Body Style').agg('max','min', 'avg')
+"""
 # work with the data file 'Auto_Import_1985.csv'
 
 # Data Validation
 # define the checking methonds
-'''
+
 def decimal_check(value): # check of a value is a decimal number 
     try:
         Decimal(dec_number)
@@ -100,38 +103,8 @@ def text_check(value): # check if a value is a text string
 
 decimal_validation = [CustomerElementValidation(lambda d: decimal_check(d) , 'is not decimal')]
 integer_validation = [CustomerElementValidation(lambda i: integer_check(b) , 'is not integer')]
-null_validation = [CustomerElementValidation(lambda d: d is not  np.nan, 'this field cannot be null']
+'null_validation = [CustomerElementValidation(lambda d: d is not  np.nan, 'this field cannot be null']
 
-# define a validation schema
-#define what rules will be applied for each of the columns to be read from the file
-schema = pandas_schema.Schema([
-    Column('Symboling'), integer_validation  #integer from -3 to 3
-    Column('Normalized Loss'), integer_validation   # integer from 65 to 256
-    Column('Make'), # text
-    Column('Fuel Type'), # diesel, gas
-    Column('Aspiration'), # text
-    Column('Num of Doors'), # text (two, four)
-    Column('Body Style'), # text: hardtop, wagon, sedan, hatchback, convertible
-    Column('Drive Wheels'), # text: 4wd, fwd, rwd
-    Column('Engine Location'), # text: front, rear
-    Column('Wheel Base'), decimal_validation  # decimal from 86.6 to 120.9
-    Column('Length'),  decimal_validation   # decimal from 141.1 to 208.1
-    Column('Width'), decimal_validation  # decimal from 60.3 to 72.3
-    Column('Height'), decimal_validation   # decimal from 47.8 to 59.8
-    Column('Curb Weight'), integer_validation   # integer from 1488 to 4066
-    Column('Num of Cylinders'), # text: eight, five, four, six, three, twelve, two
-    Column('Engine Size'),  integer_validation # integer from 61 to 326
-    Column('Fuel System'), #string: 1bbl, 2bbl, 4bbl, idi,mfi,mpfi,spdi,spfi
-    Column('Bore'),decimal_validation  # decimal from 2.54 to 3.94
-    Column('Stroke'), decimal_validation #decimal from 2.07 to 4.17
-    Column('Compression Ratio'), integer_validation #  integer: from 7 to 23
-    Column('Horsepower'), integer_validation  # integer:from 48 to 288
-    Column('Peak rmp'), integer_validation  # integer: from 4150 to 6600
-    Column('City mpg'), integer_validation  #integer: from 13 to 49
-    Column('Highway mpg'), integer_validation  # integer: 16 to 54
-    Column('Price')  integer_validation  # integer from 5118 to 45400
-])
-'''
 
 # read the file
 
@@ -190,7 +163,7 @@ print('Diesel: ' + str(num_diesel_cars) + '(' + str(percent_diesel_cars) + ' %)'
 print()
 print('Answer: ')
 if num_gasoline_cars > num_diesel_cars :
-    print(str(percent_gasoline_cars) + " % of the imported cars are gasoline cars" )
+    print(str(percent_gasoline_cars) + " "% of the imported cars are gasoline cars" )
 elif num_diesel_cars > num_gasoline_cars :
     print(print(str(percent_diesel_cars) + "% of the imported cars are diesel cars" ))
 else:
@@ -268,16 +241,11 @@ print('Answer: ' + num_doors + '-door cars are more in demand and  they make '  
 
 print('_________________________________________________________')
 
-
-'''
 position_num = list_num_doors.index(max_num_cars)
 num_doors = list_num_doors[position_num]
 print(num_doors)
-'''
-# What cars are more imported: 2-doors or 4-doors?
-
-
-'''
+"""
+"""
 # 1) ----  Scatter Plot  ----
 
 
@@ -570,4 +538,4 @@ fig , ax = plt.subplots()
 avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 
-'''
+"""
