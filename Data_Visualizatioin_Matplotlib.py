@@ -9,7 +9,7 @@ import pandas as pd
 from io import StringIO
 from pandas_schema import Column, Schema
 from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhitespaceValidation, CanConvertValidation, MatchesPatternValidation, InRangeValidation, InListValidation
-print("Hello World ")
+
 
 auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' )
 
@@ -41,10 +41,12 @@ schema = Schema ([
     Column('Highway mpg'), [InRangeValidation(16,54)] ,  # integer: 16 to 54
     Column('Price'), [InRangeValidation(5118,45400)]  # integer from 5118 to 45400
 ])
-'''
+
 test_file = pd.read_csv(('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
 
-
+print()
+print("Hello World ")
+print()
 errors = schema.validate(test_file)
 for error in errors:
     print(error)
@@ -52,13 +54,6 @@ for error in errors:
 
 print()
 print('Check the data type of the columns:')
-print(auto.dtypes)
-print()
-print('Change the data type of the column <Price>  from object to integer')
-
-auto['Price'] = auto['Price'].astype(str).astype(int)
-print(auto.dtypes)
-'''
 
 # remove rows with <?> at the column <Price> from the data frame
 auto_new = auto[auto['Price']  != '?']
@@ -66,6 +61,12 @@ auto_new['Price'] = auto_new['Price'].astype(str).astype(int)
 print('auto_new')
 print(auto_new.dtypes)
 print()
+
+# group by <Body Style>, aggregate(max, min, avg)
+print(auto_new.groupby('Make').Price.agg(['min','max','mean']) )
+
+
+"""
 print("*---------------------------------------------------------*")
 print()
 
@@ -74,9 +75,9 @@ auto_new.sort_values( by = ['Price'] , inplace = True , ascending = False)
 print("Sorted <auto_new> DataFrame")
 print(auto_new)
 
-# group by <Body Style>, aggregate(max, min, avg)
-print(auto_new.groupby('Body Style').agg('max','min', 'avg')
-"""
+
+
+
 # work with the data file 'Auto_Import_1985.csv'
 
 # Data Validation
@@ -244,8 +245,7 @@ print('_________________________________________________________')
 position_num = list_num_doors.index(max_num_cars)
 num_doors = list_num_doors[position_num]
 print(num_doors)
-"""
-"""
+
 # 1) ----  Scatter Plot  ----
 
 
