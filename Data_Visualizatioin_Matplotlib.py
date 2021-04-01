@@ -63,7 +63,12 @@ print(auto_new.dtypes)
 print()
 
 # group by <Body Style>, aggregate(max, min, avg)
-print(auto_new.groupby('Make').Price.agg(['min','max','mean']) )
+print(auto_new.groupby('Body Style').Price.agg(['min','max','mean']) )
+
+# group by <Make>, aggregate(avg price)
+print()
+print(auto_new.groupby('Make').Price.agg(['mean']) )
+
 
 
 """
