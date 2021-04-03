@@ -83,6 +83,14 @@ plt.xlabel('Body Style')
 plt.ylabel('Average Price, $ US')
 plt.show() # display the bar chart
 
+fig, axes = plt.subplots()
+fig.set_facecolor('beige')
+ax = sorted_auto_agg.plot( use_index = True , y = 'mean' , kind = 'bar' , ax = axes , legend = False , rot = 0)
+ax.set_xlabel('Car Body Style' , fontsize = 12, color = 'purple')
+ax.set_ylabel('Car Average Price, $ US', fontsize = 12 , color = 'purple')
+
+plt.show()
+
 
 
 
