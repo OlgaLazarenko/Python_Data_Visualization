@@ -65,9 +65,13 @@ print(auto_new.dtypes)
 print()
 
 # group by <Body Style>, aggregate(max, min, avg)
-print(auto_new.groupby('Body Style').Price.agg(['mean']).astype(int))
+auto_agg = auto_new.groupby('Body Style').Price.agg(['mean']).astype(int)
+print(auto_agg)
+print()
 
-auto_new.groupby('Body Style').Price.agg(['mean']).astype(int).plot(kind='bar', rot = 0)
+
+
+auto_agg.plot(kind='bar', rot = 0)
 plt.show()
 
 # create bar chart for the aggregation
