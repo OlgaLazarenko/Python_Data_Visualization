@@ -58,12 +58,22 @@ print('Check the data type of the columns:')
 # remove rows with <?> at the column <Price> from the data frame
 auto_new = auto[auto['Price']  != '?']
 auto_new['Price'] = auto_new['Price'].astype(str).astype(int)
+print()
+print()
 print('auto_new')
 print(auto_new.dtypes)
 print()
 
 # group by <Body Style>, aggregate(max, min, avg)
-print(auto_new.groupby('Body Style').Price.agg(['min','max','mean']).astype(int) )
+print(auto_new.groupby('Body Style').Price.agg(['mean']).astype(int))
+
+auto_new.groupby('Body Style').Price.agg(['mean']).astype(int).plot(kind='bar')
+plt.show()
+
+# create bar chart for the aggregation
+print('*********')
+print("Bar Chart")
+ax = auto_new.plot.bar(x='Body Style' , y = 'mean')
 
 # group by <Make>, aggregate(avg price)
 print()
