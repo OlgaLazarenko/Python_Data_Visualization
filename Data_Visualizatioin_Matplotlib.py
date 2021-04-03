@@ -50,7 +50,7 @@ errors = schema.validate(test_file)
 for error in errors:
     print(error)
 '''
-
+# The data types of the columns ____________________________________________
 print()
 print('Check the data type of the columns:')
 print()
@@ -69,24 +69,18 @@ print('the values at the column <Price> are integer data type now')
 print(auto.dtypes)
 print()
 
-# group by <Body Style>, aggregate(max, min, avg)
-auto_agg = auto_new.groupby('Body Style').Price.agg(['mean']).astype(int)
+# _________________________________________________________________________________
+
+# Create aggregations 
+# group by <Body Style>, aggregate(mean)
+auto_agg = auto.groupby('Body Style').Price.agg(['mean']).astype(int)
 print(auto_agg)
 print()
+auto_agg.plot(kind='bar', rot = 0) # create bar chart for the aggregation
+plt.show() # display the bar chart
 
 
 
-auto_agg.plot(kind='bar', rot = 0)
-plt.show()
-
-# create bar chart for the aggregation
-print('*********')
-print("Bar Chart")
-ax = auto_new.plot.bar(x='Body Style' , y = 'mean')
-
-# group by <Make>, aggregate(avg price)
-print()
-print(auto_new.groupby('Make').Price.agg(['mean']).astype(int))
 
 
 
