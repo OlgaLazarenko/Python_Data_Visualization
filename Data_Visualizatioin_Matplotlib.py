@@ -76,7 +76,11 @@ print()
 auto_agg = auto.groupby('Body Style').Price.agg(['mean']).astype(int)
 print(auto_agg)
 print()
-auto_agg.plot(kind='bar', rot = 0) # create bar chart for the aggregation
+sorted_auto_agg = auto_agg.sort_values(['mean'] , ascending = False) # sort the avg price at the descending order 
+print(sorted_auto_agg)
+sorted_auto_agg.plot(kind='bar', rot = 0, legend = False) # create bar chart for the aggregation, display the greatest values first
+plt.xlabel('Body Style')
+plt.ylabel('Average Price, $ US')
 plt.show() # display the bar chart
 
 
