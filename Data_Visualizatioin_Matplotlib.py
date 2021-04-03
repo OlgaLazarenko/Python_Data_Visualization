@@ -12,7 +12,7 @@ from pandas_schema.validation import LeadingWhitespaceValidation, TrailingWhites
 
 
 auto = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv' )
-
+'''
 schema = Schema ([
     Column('Symboling', [InRangeValidation(-3,3)] ) ,  # integer from -3 to 3 
     Column('Normalized Loss', [InRangeValidation(65,256)] )  , # integer from 65 to 256
@@ -44,24 +44,29 @@ schema = Schema ([
 
 test_file = pd.read_csv(('E:\_Python_Projects_Data\Data_Visualization\Autos_Data_Set\Autos_Import_1985.csv'))
 
-print()
-print("Hello World ")
+
 print()
 errors = schema.validate(test_file)
 for error in errors:
     print(error)
-
+'''
 
 print()
 print('Check the data type of the columns:')
+print()
+print('Column Name   |  Data Type')
+print('____________________________')
+print()
+print(auto.dtypes)
+print()
 
-# remove rows with <?> at the column <Price> from the data frame
-auto_new = auto[auto['Price']  != '?']
-auto_new['Price'] = auto_new['Price'].astype(str).astype(int)
+
+auto = auto[auto['Price']  != '?'] # remove rows with <?> at the column <Price> from the data frame
+auto['Price'] = auto['Price'].astype(str).astype(int) # convert the values of the column <Price> to  the integer data type
 print()
 print()
-print('auto_new')
-print(auto_new.dtypes)
+print('the values at the column <Price> are integer data type now')
+print(auto.dtypes)
 print()
 
 # group by <Body Style>, aggregate(max, min, avg)
