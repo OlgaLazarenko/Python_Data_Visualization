@@ -88,6 +88,9 @@ fig.set_facecolor('beige')
 ax = sorted_auto_agg.plot( use_index = True , y = 'mean' , kind = 'bar' , ax = axes , legend = False , rot = 0)
 ax.set_xlabel('Car Body Style' , fontsize = 12, color = 'purple')
 ax.set_ylabel('Car Average Price, $ US', fontsize = 12 , color = 'purple')
+ax.grid( color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
+ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points
+ax.set_title('Average car price by the car body style' , fontsize = 12 , color = 'purple')
 
 plt.show()
 
