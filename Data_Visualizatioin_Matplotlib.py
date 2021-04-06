@@ -77,6 +77,7 @@ auto_agg = auto.groupby('Body Style').Price.agg(['mean']).astype(int)
 print(auto_agg)
 print()
 sorted_auto_agg = auto_agg.sort_values(['mean'] , ascending = False) # sort the avg price at the descending order 
+print('Sorted aggregation')
 print(sorted_auto_agg)
 
 
@@ -89,7 +90,7 @@ ax.grid( axis = 'y' , color = 'brown' , linestyle = 'dashed', linewidth = 0.8)
 ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points
 ax.set_title('Average car price by the car body style' , fontsize = 12 , color = 'purple')
 
-plt.show()
+plt.show() # display the plot: the average car price by the car body style
 
 
 
