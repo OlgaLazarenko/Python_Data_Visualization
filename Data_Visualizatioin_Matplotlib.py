@@ -93,9 +93,10 @@ plt.show() # display the plot: the average car price by the car body style
 # -----------------------------------------
 # Total sales by the car make
 print()
-auto_sales_total = auto.groupby('Make').Price.agg('sum')
-print('Total car sales by the car make:')
-print(auto_sales_total)
+auto_Total_salesPrice_byMake= auto.groupby('Make').Price.agg('sum')
+print('Sales total/sum by the car make:')
+print(auto_Total_salesPrice_byMake)
+
 print("*---------------------------------------------------------*")
 
 '''
