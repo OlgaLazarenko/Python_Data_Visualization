@@ -73,13 +73,14 @@ print()
 
 # Create aggregations 
 # Average car price by the car body style: group by <Body Style>, aggregate(mean)
+
 auto_agg = auto.groupby('Body Style').Price.agg(['mean']).astype(int)
 print(auto_agg)
 print()
 sorted_auto_agg = auto_agg.sort_values(['mean'] , ascending = False) # sort the avg price at the descending order 
 print('Sorted aggregation')
 print(sorted_auto_agg)
-
+# Bar Chart
 fig, axes = plt.subplots()
 fig.set_facecolor('beige')
 ax = sorted_auto_agg.plot( use_index = True , y = 'mean' , kind = 'bar' , ax = axes , legend = False , rot = 0)
@@ -90,12 +91,21 @@ ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points
 ax.set_title('Average car price by the car body style' , fontsize = 12 , color = 'purple')
 
 plt.show() # display the plot: the average car price by the car body style
+
+# Pie Chart
+y = auto_agg['mean']
+plt.pie(y)
+plt.show()
 # -----------------------------------------
 # Total sales by the car make
 print()
-auto_Total_salesPrice_byMake= auto.groupby('Make').Price.agg('sum')
+auto_SumPrice_byMake= auto.groupby('Make').Price.agg('sum')
 print('Sales total/sum by the car make:')
-print(auto_Total_salesPrice_byMake)
+print(auto_SumPrice_byMake)
+print()
+print('Sales total/sorted by the car make:')
+sorted_auto_SumPrice_byMake = auto_SumPrice_byMake.sort_values(['sum'] , ascending = False) # sort the sum 
+print(sorted_auto_Total_salesPrice)
 
 print("*---------------------------------------------------------*")
 
