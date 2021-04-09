@@ -72,14 +72,13 @@ print()
 # _________________________________________________________________________________
 
 # Create aggregations 
-# group by <Body Style>, aggregate(mean)
+# Average car price by the car body style: group by <Body Style>, aggregate(mean)
 auto_agg = auto.groupby('Body Style').Price.agg(['mean']).astype(int)
 print(auto_agg)
 print()
 sorted_auto_agg = auto_agg.sort_values(['mean'] , ascending = False) # sort the avg price at the descending order 
 print('Sorted aggregation')
 print(sorted_auto_agg)
-
 
 fig, axes = plt.subplots()
 fig.set_facecolor('beige')
@@ -91,23 +90,15 @@ ax.set_axisbelow(True) # do not show the grid lines on the graph/the data points
 ax.set_title('Average car price by the car body style' , fontsize = 12 , color = 'purple')
 
 plt.show() # display the plot: the average car price by the car body style
-
-
-
-
-
-
-"""
-print("*---------------------------------------------------------*")
+# -----------------------------------------
+# Total sales by the car make
 print()
+auto_sales_total = auto.groupby('Make').Price.agg('sum')
+print('Total car sales by the car make:')
+print(auto_sales_total)
+print("*---------------------------------------------------------*")
 
-print('Sort the DataFrame <auto_new> by the column <Price> the descending way')
-auto_new.sort_values( by = ['Price'] , inplace = True , ascending = False)
-print("Sorted <auto_new> DataFrame")
-print(auto_new)
-
-
-
+'''
 
 # work with the data file 'Auto_Import_1985.csv'
 
@@ -569,4 +560,4 @@ fig , ax = plt.subplots()
 avg_city_mpg = auto.groupby(['Num of Cylinders'])['City mpg'].mean()
 avg_city_mpg = round(avg_city_mpg,1)
 
-"""
+'''
