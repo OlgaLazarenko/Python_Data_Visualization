@@ -80,7 +80,7 @@ print()
 sorted_auto_agg = auto_agg.sort_values(['mean'] , ascending = False) # sort the avg price at the descending order 
 print('Sorted aggregation')
 print(sorted_auto_agg)
-# Bar Chart
+# Bar Chart <Average Car Price by Body Style>
 fig, axes = plt.subplots()
 fig.set_facecolor('beige')
 ax = sorted_auto_agg.plot( use_index = True , y = 'mean' , kind = 'bar' , ax = axes , legend = False , rot = 0)
@@ -92,9 +92,14 @@ ax.set_title('Average car price by the car body style' , fontsize = 12 , color =
 
 plt.show() # display the plot: the average car price by the car body style
 
-# Pie Chart
+# Pie Chart <Average Car Price by Body Style>
+car_labels = auto['Body Style'].unique() # create the list with unique car body styles
+print(car_labels)
+
+car_explode = [0.2 ,0,0,0,0]
+
 y = auto_agg['mean']
-plt.pie(y)
+plt.pie( y , labels = car_labels , explode = car_explode , startangle= 0 , shadow=True)
 plt.show()
 # -----------------------------------------
 # Total sales by the car make
