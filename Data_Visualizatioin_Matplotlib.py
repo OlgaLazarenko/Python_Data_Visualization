@@ -109,13 +109,14 @@ plt.show()
 # -----------------------------------------
 # Total sales by the car make
 print()
-auto_SumPrice_byMake= auto.groupby('Make').Price.agg('sum')
+# auto_price_agg= auto.groupby('Make').Price.agg('sum').astype(int)
+auto_price_agg= auto.groupby('Make')['Price'].sum()
 print('Sales total/sum by the car make:')
-print(auto_SumPrice_byMake)
+print(auto_price_agg)
 print()
 print('Sales total/sorted by the car make:')
-sorted_auto_SumPrice_byMake = auto_SumPrice_byMake.sort_values(['sum'] , ascending = False) # sort the sum 
-print(sorted_auto_Total_salesPrice)
+sorted_auto_price_agg = auto_price_agg.sort_values(['sum'] , ascending = False) # sort the sum 
+print(sorted_auto_price_agg)
 
 print("*---------------------------------------------------------*")
 
