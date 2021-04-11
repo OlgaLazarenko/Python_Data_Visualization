@@ -81,6 +81,7 @@ sorted_auto_agg = auto_agg.sort_values(['mean'] , ascending = False) # sort the 
 print('Sorted aggregation')
 print(sorted_auto_agg)
 # Bar Chart <Average Car Price by Body Style>
+
 fig, axes = plt.subplots()
 fig.set_facecolor('beige')
 ax = sorted_auto_agg.plot( use_index = True , y = 'mean' , kind = 'bar' , ax = axes , legend = False , rot = 0)
@@ -99,8 +100,12 @@ print(car_labels)
 car_explode = [0.2 ,0,0,0,0]
 
 y = auto_agg['mean']
+fig = plt.figure(figsize = (10,5))
 plt.pie( y , labels = car_labels , explode = car_explode , startangle= 0 , shadow=True)
+plt.title('Average Car Price by the Car Body Type')
 plt.show()
+
+
 # -----------------------------------------
 # Total sales by the car make
 print()
